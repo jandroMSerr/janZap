@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'janZap'`, () => {
+  it(`should have as title 'fireauth-angular-test'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('janZap');
+    expect(app.title).toEqual('fireauth-angular-test');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('janZap app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('fireauth-angular-test app is running!');
   });
 });
