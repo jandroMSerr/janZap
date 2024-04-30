@@ -1,6 +1,10 @@
 a {
     text-decoration: none;
 }
+body{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2Flogin%2Fzapas.png?alt=media);
+    background-size: cover;
+}
 .login-page {
     width: 100%;
     height: 100vh;
@@ -10,4 +14,27 @@ a {
 }
 .form-right i {
     font-size: 100px;
+}
+.recovery-password-text{
+    color: black;
+}
+.recovery-password-text:hover{
+    color: red;
+}
+.company-name:hover{
+    color: red;
+    font-weight: 900;
+}
+.company-icon{
+    color: red;
+}
+.google-button{
+    -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-size: 20px;
+  padding: 10px 10px 10px 10px;
+  border: solid #ff0000 3px;
+  text-decoration: none;
+  background-color: white;
 }

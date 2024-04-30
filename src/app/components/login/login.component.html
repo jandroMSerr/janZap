@@ -13,7 +13,7 @@
 
 <body>
 
-  <div class="login-page bg-light">
+  <div class="login-page">
     <div class="container">
       <div class="row">
         <div class="col-lg-10 offset-lg-1">
@@ -23,29 +23,29 @@
                 <div class="form-left h-100 py-5 px-5">
                   <div class="row g-4">
                     <div class="col-12">
-                      <label>Usuario<span class="text-danger">*</span></label>
+                      <label>Usuario <span class="text-danger">*</span></label>
                       <div class="input-group">
                         <div class="input-group-text"><i class="bi bi-person-circle"></i></div>
                         <input type="email" name="email" id="email" #email class="form-control"
-                          placeholder="Enter Username">
+                          placeholder="example@janZap.es">
                       </div>
                     </div>
 
                     <div class="col-12">
-                      <label>Contraseña<span class="text-danger">*</span></label>
+                      <label>Contraseña <span class="text-danger">*</span></label>
                       <div class="input-group">
                         <div class="input-group-text"><i class="bi bi-key"></i></div>
                         <input type="password" name="password" id="password" #password class="form-control"
-                          placeholder="Enter Password">
+                          placeholder="··········">
                       </div>
                     </div>
 
                     <div class="col-sm-12">
-                      <a href="#" class="float-end text-primary" routerLink="/forgotpassword">¿Has olvidado la contraseña?</a>
+                      <a href="#" class="recovery-password-text float-end" routerLink="/forgotpassword">¿Contraseña olvidada?</a>
                     </div>
                     <div class="col-sm-4">
-                      <button type="click" (click)="logInWithGoogle()">
-                        <i class="bi bi-google"></i>
+                      <button class="google-button" type="click" (click)="logInWithGoogle()">
+                        - <i class="bi bi-google"></i> -
                       </button>
 
                     </div>
@@ -54,18 +54,21 @@
                     <div class="col-sm-4">
                     </div>
                     <div class="col-12">
+                      <button (click)="navigateToSignin()"
+                      class="btn  px-4 float-end mt-4"> <p class="recovery-password-text">Registrarse</p> 
+                    </button>
                       <button type="submit" (click)="logIn(email.value, password.value)"
-                        class="btn btn-primary px-4 float-end mt-4">Entrar</button>
-                        <button (click)="navigateToSignin()"
-                        class="btn btn-primary px-4 float-end mt-4">Registrase</button>
+                        class="btn btn-dark px-4 float-end mt-4">Entrar
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-md-5 ps-0 d-none d-md-block">
-                <div class="form-right h-100 bg-primary text-white text-center pt-5">
-                  <i class="bi bi-bootstrap"></i>
-                  <h2 class="fs-1">JanZap</h2>
+                <div class="form-right h-100 bg-dark text-white text-center pt-5">
+                  <i class="company-icon bi bi-lightning-charge"></i>
+                  <h2 class=" company-name fs-1">JanZap</h2>
+                  <h3 class="fs-5">Se el centro de las miradas.</h3>
                 </div>
               </div>
             </div>

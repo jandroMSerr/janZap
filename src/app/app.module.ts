@@ -19,7 +19,7 @@ import { ShippingComponent } from './components/shipping/shipping.component';
 import { ReturnsComponent } from './components/returns/returns.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { ShopComponent } from './components/shop/shop.component';
+//import { ShopComponent } from './components/shop/shop.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 
@@ -36,7 +36,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ReturnsComponent,
     QuestionsComponent,
     ContactComponent,
-    ShopComponent,
+   // ShopComponent,
     NavbarComponent,
     FooterComponent
   ],
