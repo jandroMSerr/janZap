@@ -6,11 +6,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./questions.component.scss">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
 </head>
-
+<header>
+  
+</header>
 <body>
-
-  <div class="container-fluid mb-4">
+  <div class="container-fluid">
+    <div class="row">
+      <app-navbar></app-navbar>
+    </div>
+  
+  </div>
+  <div class="container-fluid mb-4" style="margin-top: 3.5rem;">
     <div class="row first-row mb-4">
       <div class="col">
         <h2>PREGUNTAS FRECUENTES</h2>
@@ -261,7 +270,7 @@
       </div>
     </div>
   </div>
-  <div class="accordion" id="accordionPanelsStayOpenExample">
+  <div class="accordion mb-2" id="accordionPanelsStayOpenExample">
     <div class="container-fluid">
       <div class="row first-row">
         <div class="col">
@@ -324,6 +333,7 @@
     </div>
 
   </div>
+  <app-footer></app-footer>
 
 
 </body>
