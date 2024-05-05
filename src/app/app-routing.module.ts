@@ -13,7 +13,7 @@ import { ContactComponent } from './components/contact/contact.component';
 //import { ShopComponent } from './components/shop/shop.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
