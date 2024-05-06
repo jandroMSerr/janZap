@@ -19,10 +19,13 @@ import { ShippingComponent } from './components/shipping/shipping.component';
 import { ReturnsComponent } from './components/returns/returns.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ContactComponent } from './components/contact/contact.component';
-//import { ShopComponent } from './components/shop/shop.component';
+import { ShopdetailComponent } from './components/shopdetail/shopdetail.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { defineCustomElements } from '@ionic/pwa-elements/loader';
+import { SmallcardComponent } from './components/smallcard/smallcard.component';
 
+defineCustomElements(window);
 
 @NgModule({
   declarations: [
@@ -36,9 +39,10 @@ import { FooterComponent } from './components/footer/footer.component';
     ReturnsComponent,
     QuestionsComponent,
     ContactComponent,
-   // ShopComponent,
+    ShopdetailComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    SmallcardComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +54,7 @@ import { FooterComponent } from './components/footer/footer.component';
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
+    
 
     // error solution NullInjectError
     AngularFireModule.initializeApp(environment.firebase)

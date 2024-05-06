@@ -10,7 +10,7 @@ import { ShippingComponent } from './components/shipping/shipping.component';
 import { ReturnsComponent } from './components/returns/returns.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ContactComponent } from './components/contact/contact.component';
-//import { ShopComponent } from './components/shop/shop.component';
+import { ShopdetailComponent } from './components/shopdetail/shopdetail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'returns', component: ReturnsComponent },
   { path: 'questions', component: QuestionsComponent },
   { path: 'contact', component: ContactComponent },
-//  { path: 'shop', component: ShopComponent },
+  { path: 'shop', component: ShopdetailComponent },
   { path: 'home', component: homeComponent, canActivate: [AuthGuard] }
 ];
 

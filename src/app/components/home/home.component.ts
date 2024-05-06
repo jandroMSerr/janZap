@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/shared/services/auth.service';
-import { PlacesService } from 'src/app/shared/services/admin.service'; 
-import {Place, Portada2, Portada3, Portada4, Portada5} from 'src/app/shared/interfaces/admin';
+import { PlacesService } from 'src/app/shared/services/admin.service';
+import { Place, Portada2, Portada3, Portada4, Portada5 } from 'src/app/shared/interfaces/admin';
 
 
 @Component({
@@ -10,11 +10,11 @@ import {Place, Portada2, Portada3, Portada4, Portada5} from 'src/app/shared/inte
   styleUrls: ['./home.component.css']
 })
 
-export class homeComponent implements OnInit{
+export class homeComponent implements OnInit {
 
   places: Place[]; portada2: Portada2[]; portada3: Portada3[]; portada4: Portada4[]; portada5: Portada5[];
 
-  
+
   constructor(
     private authService: AuthService,
     private placesService: PlacesService
@@ -23,7 +23,14 @@ export class homeComponent implements OnInit{
     this.places = [{
       id: '',
       name: '',
-      description: ''
+      description: '',
+      price: 0,
+      picture: '',
+      rating: 0,
+      comments: '',
+      color: '',
+      size: '',
+      
     }];
     this.portada2 = [{
       id: '',
@@ -69,5 +76,5 @@ export class homeComponent implements OnInit{
     this.authService.logOut();
   }
 
-  
+
 }

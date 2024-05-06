@@ -2,6 +2,14 @@ export interface Place {
     id?: string;
     name: string;
     description: string;
+    price: number;
+    picture: string;
+    rating: number;
+    comments: string;
+    color: string;
+    size: string;
+    
+
 }
 export interface Portada2 {
     id?: string;

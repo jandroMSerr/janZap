@@ -1,0 +1,19 @@
+<h4 > LISTA DE LA COMPRA </h4>
+
+<div class="list-group mt-3" *ngFor="let products of places;">
+  <ol class="list-group list-group-numbered mt-2">
+    <div class="d-flex w-100 justify-content-between">
+      <img src="{{products.picture}}" style="width: 50px; height: 50px;" class="rounded" alt="...">
+      <h5 class="mb-1 d-flex align-items-center">{{products.name}}</h5>
+      <small class="d-flex align-items-center">{{products.price}}€</small>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+        <button class="btn btn-outline-danger" (click)="deleteProducts(products)">Borrar</button>
+      </div>
+    </div>
+  </ol>
+ 
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
+  <button class="btn btn-outline-dark">Comprar</button>
+</div>

@@ -1,27 +1,67 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData, doc, deleteDoc } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { Place, Portada2, Portada3, Portada4, Portada5} from '../interfaces/admin';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Place, Portada2, Portada3, Portada4, Portada5 } from '../interfaces/admin';
+import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PlacesService {
 
-  constructor(private firestore: Firestore) { }
+  cardProducts : Place[] = [];
+  _productscesta: BehaviorSubject<Place[]>;
+  constructor(private firestore: Firestore) { 
+    this._productscesta = new BehaviorSubject<Place[]>([]);
+  }
+
+  // tienda //
+  addNewProduct( productscesta: Place){
+    this.cardProducts.push(productscesta);
+    this._productscesta.next(this.cardProducts);
+    
+    const placeRef = collection(this.firestore, 'cesta');
+    return addDoc(placeRef, productscesta);
+  }
+
+  getProduct(): Observable<Place[]> {
+    const placeRef = collection(this.firestore, 'cesta');
+    return collectionData(placeRef, { idField: 'id' }) as Observable<Place[]>;
+  }
+
+
+  deleteProduct(place: Place) {
+    const placeDocRef = doc(this.firestore, `cesta/${place.id}`);
+    return deleteDoc(placeDocRef);
+  }
+
+  // Fin tienda //
+
+  async trakePicture(promptLabelHeader: string) {
+    return await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Prompt,
+      promptLabelHeader,
+      promptLabelPhoto: 'Selecciona una imagen',
+      promptLabelPicture: 'Toma una foto'
+    });
+  };
 
   addPlace(place: Place) {
-    const placeRef = collection(this.firestore, 'texto1');
+    const placeRef = collection(this.firestore, 'productos');
     return addDoc(placeRef, place);
+
   }
 
   getPlaces(): Observable<Place[]> {
-    const placeRef = collection(this.firestore, 'texto1');
+    const placeRef = collection(this.firestore, 'productos');
     return collectionData(placeRef, { idField: 'id' }) as Observable<Place[]>;
   }
 
   deletePlaces(place: Place) {
-    const placeDocRef = doc(this.firestore, `texto1/${place.id}`);
+    const placeDocRef = doc(this.firestore, `productos/${place.id}`);
     return deleteDoc(placeDocRef);
   }
 

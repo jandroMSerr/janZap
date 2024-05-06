@@ -18,13 +18,108 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quam urna, dignissim nec auctor in, mattis
           vitae leo.</p>
       </div>
-      
 
-        <div class="card-details">
-          <h3 class="title">Texto Portada</h3>
-          <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+
+      <div class="card-details">
+        <h3 class="title">Productos</h3>
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
           <div class="row">
-           
+
+            <div class="form-group col-sm-5">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" formControlName="name">
+            </div>
+            <div class="form-group col-sm-5">
+              <label class="form-label">Description</label>
+              <input type="text" class="form-control" formControlName="description">
+            </div>
+            <div class="form-group col-sm-2">
+              <label class="form-label">Precio</label>
+              <input type="text" class="form-control" formControlName="price">
+            </div>
+            <div class="form-group col-sm-3 mt-3">
+              <label class="form-label">Media comentarios</label>
+              <input type="text" class="form-control" formControlName="rating">
+            </div>
+            <div class="form-group col-sm-3 mt-3">
+              <label class="form-label">Numero de comentarios</label>
+              <input type="text" class="form-control" formControlName="comments">
+            </div>
+            <div class="form-group col-sm-3 mt-3">
+              <label class="form-label">Color</label>
+              <input type="text" class="form-control" formControlName="color">
+            </div>
+            <div class="form-group col-sm-3 mt-3">
+              <label class="form-label">Tamaño</label>
+              
+            </div>
+
+
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+              <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+            </div>
+
+
+
+
+            <div class="form-group col-sm-12 mt-5">
+              <img [src]="formulario.value.picture" style="display:block;
+              margin:auto; width: 276px;" />
+              <button type="text" class="form-control" formControlName="picture" (click)="trakePicture()">Foto Producto</button>
+            </div>
+
+
+            <div class="mt-3"></div>
+            <div class="form-group col-sm-12">
+              <input type="submit" value="Enviar" class="btn btn-info">
+            </div>
+
+          </div>
+        </form>
+
+        <div class="mt-3"></div>
+
+      </div>
+      <div class="products">
+        <h3 class="title">Previsualizador</h3>
+        <div class="place" *ngFor="let place of places">
+          <div class="form-group col-sm-12">
+            <div class="input-group">
+              <button class="btn btn-outline-danger" (click)="onClickDelete(place)">Borrar</button>
+              <img [src]="place.picture" style="width: 253px;">
+              <label class="form-control">{{place.name}}</label>
+              <label class="form-control">{{place.description}}</label>
+              <label class="form-control">{{place.price}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="row mt-5">
+    <div class="form-group col-sm-12">
+      <label class="form-label">Foto Producto</label>
+      <input type="file" class="form-control" (change)="uploadImage($event)">
+    </div>
+  </div>
+
+  <section class="payment-form ">
+    <div class="container">
+      <div class="card-details">
+        <h3 class="title">Texto Portada 2</h3>
+        <form [formGroup]="formularioPortada2" (ngSubmit)="onSubmitPortada2()">
+          <div class="row">
+
             <div class="form-group col-sm-5">
               <label class="form-label">Nombre</label>
               <input type="text" class="form-control" formControlName="name">
@@ -33,45 +128,38 @@
               <label class="form-label">Description</label>
               <input type="text" class="form-control" formControlName="description">
             </div>
-
             <div class="mt-3"></div>
             <div class="form-group col-sm-12">
               <input type="submit" value="Enviar" class="btn btn-info">
             </div>
-          
-          </div>
-            </form>
-            <div class="row">
-            <div class="form-group col-sm-12">
-              <label class="form-label">Foto</label>
-              <input type="file" class="form-control" (change)="uploadImage($event)">
-            </div>
-            </div>
-          <div class="mt-3"></div>
 
-        </div>
-        <div class="products">
-          <h3 class="title">Previsualizador</h3>
-          <div class="place" *ngFor="let place of places">
-            <div class="form-group col-sm-12">
-              <div class="input-group">
-                <button class="btn btn-outline-danger" (click)="onClickDelete(place)">Borrar</button>
-                <label class="form-control">{{place.name}}</label>
-                <label class="form-control">{{place.description}}</label>
-              </div>
+          </div>
+        </form>
+        <div class="mt-3"></div>
+
+      </div>
+      <div class="products">
+        <h3 class="title">Previsualizador</h3>
+        <div class="place" *ngFor="let portada of portada2">
+          <div class="form-group col-sm-12">
+            <div class="input-group">
+              <button class="btn btn-outline-danger" (click)="onClickDeletePortada2(portada)">Borrar</button>
+              <label class="form-control">{{portada.name}}</label>
+              <label class="form-control">{{portada.description}}</label>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </section>
 
   <section class="payment-form ">
     <div class="container">
       <div class="card-details">
-          <h3 class="title">Texto Portada 2</h3>
-          <form [formGroup]="formularioPortada2" (ngSubmit)="onSubmitPortada2()">
+        <h3 class="title">Texto Portada 3</h3>
+        <form [formGroup]="formularioPortada3" (ngSubmit)="onSubmitPortada3()">
           <div class="row">
-           
+
             <div class="form-group col-sm-5">
               <label class="form-label">Nombre</label>
               <input type="text" class="form-control" formControlName="name">
@@ -84,34 +172,34 @@
             <div class="form-group col-sm-12">
               <input type="submit" value="Enviar" class="btn btn-info">
             </div>
-          
-          </div>
-            </form>
-          <div class="mt-3"></div>
 
-        </div>
-        <div class="products">
-          <h3 class="title">Previsualizador</h3>
-          <div class="place" *ngFor="let portada of portada2">
-            <div class="form-group col-sm-12">
-              <div class="input-group">
-                <button class="btn btn-outline-danger" (click)="onClickDeletePortada2(portada)">Borrar</button>
-                <label class="form-control">{{portada.name}}</label>
-                <label class="form-control">{{portada.description}}</label>
-              </div>
+          </div>
+        </form>
+        <div class="mt-3"></div>
+
+      </div>
+      <div class="products">
+        <h3 class="title">Previsualizador</h3>
+        <div class="place" *ngFor="let portada of portada3">
+          <div class="form-group col-sm-12">
+            <div class="input-group">
+              <button class="btn btn-outline-danger" (click)="onClickDeletePortada3(portada)">Borrar</button>
+              <label class="form-control">{{portada.name}}</label>
+              <label class="form-control">{{portada.description}}</label>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </section>
 
   <section class="payment-form ">
     <div class="container">
       <div class="card-details">
-          <h3 class="title">Texto Portada 3</h3>
-          <form [formGroup]="formularioPortada3" (ngSubmit)="onSubmitPortada3()">
+        <h3 class="title">Texto Portada 4</h3>
+        <form [formGroup]="formularioPortada4" (ngSubmit)="onSubmitPortada4()">
           <div class="row">
-           
+
             <div class="form-group col-sm-5">
               <label class="form-label">Nombre</label>
               <input type="text" class="form-control" formControlName="name">
@@ -124,34 +212,34 @@
             <div class="form-group col-sm-12">
               <input type="submit" value="Enviar" class="btn btn-info">
             </div>
-          
-          </div>
-            </form>
-          <div class="mt-3"></div>
 
-        </div>
-        <div class="products">
-          <h3 class="title">Previsualizador</h3>
-          <div class="place" *ngFor="let portada of portada3">
-            <div class="form-group col-sm-12">
-              <div class="input-group">
-                <button class="btn btn-outline-danger" (click)="onClickDeletePortada3(portada)">Borrar</button>
-                <label class="form-control">{{portada.name}}</label>
-                <label class="form-control">{{portada.description}}</label>
-              </div>
+          </div>
+        </form>
+        <div class="mt-3"></div>
+
+      </div>
+      <div class="products">
+        <h3 class="title">Previsualizador</h3>
+        <div class="place" *ngFor="let portada of portada4">
+          <div class="form-group col-sm-12">
+            <div class="input-group">
+              <button class="btn btn-outline-danger" (click)="onClickDeletePortada4(portada)">Borrar</button>
+              <label class="form-control">{{portada.name}}</label>
+              <label class="form-control">{{portada.description}}</label>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </section>
 
   <section class="payment-form ">
     <div class="container">
       <div class="card-details">
-          <h3 class="title">Texto Portada 4</h3>
-          <form [formGroup]="formularioPortada4" (ngSubmit)="onSubmitPortada4()">
+        <h3 class="title">Texto Portada 5</h3>
+        <form [formGroup]="formularioPortada5" (ngSubmit)="onSubmitPortada5()">
           <div class="row">
-           
+
             <div class="form-group col-sm-5">
               <label class="form-label">Nombre</label>
               <input type="text" class="form-control" formControlName="name">
@@ -164,64 +252,24 @@
             <div class="form-group col-sm-12">
               <input type="submit" value="Enviar" class="btn btn-info">
             </div>
-          
-          </div>
-            </form>
-          <div class="mt-3"></div>
 
-        </div>
-        <div class="products">
-          <h3 class="title">Previsualizador</h3>
-          <div class="place" *ngFor="let portada of portada4">
-            <div class="form-group col-sm-12">
-              <div class="input-group">
-                <button class="btn btn-outline-danger" (click)="onClickDeletePortada4(portada)">Borrar</button>
-                <label class="form-control">{{portada.name}}</label>
-                <label class="form-control">{{portada.description}}</label>
-              </div>
-            </div>
           </div>
-        </div>
-    </div>
-  </section>
+        </form>
+        <div class="mt-3"></div>
 
-  <section class="payment-form ">
-    <div class="container">
-      <div class="card-details">
-          <h3 class="title">Texto Portada 5</h3>
-          <form [formGroup]="formularioPortada5" (ngSubmit)="onSubmitPortada5()">
-          <div class="row">
-           
-            <div class="form-group col-sm-5">
-              <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" formControlName="name">
-            </div>
-            <div class="form-group col-sm-7">
-              <label class="form-label">Description</label>
-              <input type="text" class="form-control" formControlName="description">
-            </div>
-            <div class="mt-3"></div>
-            <div class="form-group col-sm-12">
-              <input type="submit" value="Enviar" class="btn btn-info">
-            </div>
-          
-          </div>
-            </form>
-          <div class="mt-3"></div>
-
-        </div>
-        <div class="products">
-          <h3 class="title">Previsualizador</h3>
-          <div class="place" *ngFor="let portada of portada5">
-            <div class="form-group col-sm-12">
-              <div class="input-group">
-                <button class="btn btn-outline-danger" (click)="onClickDeletePortada5(portada)">Borrar</button>
-                <label class="form-control">{{portada.name}}</label>
-                <label class="form-control">{{portada.description}}</label>
-              </div>
+      </div>
+      <div class="products">
+        <h3 class="title">Previsualizador</h3>
+        <div class="place" *ngFor="let portada of portada5">
+          <div class="form-group col-sm-12">
+            <div class="input-group">
+              <button class="btn btn-outline-danger" (click)="onClickDeletePortada5(portada)">Borrar</button>
+              <label class="form-control">{{portada.name}}</label>
+              <label class="form-control">{{portada.description}}</label>
             </div>
           </div>
         </div>
+      </div>
     </div>
   </section>
 </body>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import {Place, Portada2, Portada3, Portada4, Portada5} from 'src/app/shared/interfaces/admin';
-import { PlacesService } from 'src/app/shared/services/admin.service'; 
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Place, Portada2, Portada3, Portada4, Portada5 } from 'src/app/shared/interfaces/admin';
+import { PlacesService } from 'src/app/shared/services/admin.service';
 import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage';
 
 
@@ -15,7 +15,7 @@ export class AdminComponent {
   formularioPortada4: FormGroup; formularioPortada5: FormGroup;
 
   images: string[];
-  
+
   places: Place[]; portada2: Portada2[]; portada3: Portada3[]; portada4: Portada4[]; portada5: Portada5[];
 
   constructor(
@@ -25,37 +25,49 @@ export class AdminComponent {
     this.formulario = new FormGroup({
       id: new FormControl(),
       name: new FormControl(),
-      description: new FormControl()
+      description: new FormControl(),
+      price: new FormControl(),
+      picture: new FormControl(),
+      rating: new FormControl(),
+      comments: new FormControl(),
+      color: new FormControl(),
+      size: new FormControl(),
     }),
 
-    this.formularioPortada2 = new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-      description: new FormControl()
-    }),
+      this.formularioPortada2 = new FormGroup({
+        id: new FormControl(),
+        name: new FormControl(),
+        description: new FormControl()
+      }),
 
-    this.formularioPortada3 = new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-      description: new FormControl()
-    }),
-    this.formularioPortada4 = new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-      description: new FormControl()
-    }),
-    this.formularioPortada5 = new FormGroup({
-      id: new FormControl(),
-      name: new FormControl(),
-      description: new FormControl()
-    }),
+      this.formularioPortada3 = new FormGroup({
+        id: new FormControl(),
+        name: new FormControl(),
+        description: new FormControl()
+      }),
+      this.formularioPortada4 = new FormGroup({
+        id: new FormControl(),
+        name: new FormControl(),
+        description: new FormControl()
+      }),
+      this.formularioPortada5 = new FormGroup({
+        id: new FormControl(),
+        name: new FormControl(),
+        description: new FormControl()
+      }),
 
 
-    this.places = [{
-      id: '',
-      name: '',
-      description: ''
-    }];
+      this.places = [{
+        id: '',
+        name: '',
+        description: '',
+        price: 0,
+        picture: '',
+        rating: 0,
+        comments: '',
+        color: '',
+        size: '',
+      }];
     this.portada2 = [{
       id: '',
       name: '',
@@ -95,15 +107,29 @@ export class AdminComponent {
       this.portada5 = portada5;
     })
   }
+
+  async trakePicture() {
+    const dataUrl = (await this.placesService.trakePicture('Imagen del Producto')).dataUrl;
+    this.formulario.controls['picture'].setValue(dataUrl)
+  }
+
   async onClickDelete(place: Place) {
     const response = await this.placesService.deletePlaces(place);
     console.log(response);
   }
+  clear() {
+    this.formulario.reset();
+  }
   async onSubmit() {
     console.log(this.formulario.value)
-    const response = await this.placesService.addPlace(this.formulario.value);
-    console.log(response);
-    
+    if (this.formulario.value.name && this.formulario.value.description && this.formulario.value.price && this.formulario.value.picture && this.formulario.value.rating && this.formulario.value.comments && this.formulario.value.color) {
+      const response = await this.placesService.addPlace(this.formulario.value);
+      console.log(response);
+      this.clear();
+    }
+    else {
+      alert('Faltan campos por completar')
+    }
   }
   uploadImage($event: any) {
     const file = $event.target.files[0];
@@ -137,7 +163,6 @@ export class AdminComponent {
 
 
   // portada 2
-  
   async onClickDeletePortada2(portada2: Portada2) {
     const response = await this.placesService.deletePlace2(portada2);
     console.log(response);
@@ -148,7 +173,6 @@ export class AdminComponent {
     console.log(response);
   }
   // portada 3
-  
   async onClickDeletePortada3(portada3: Portada3) {
     const response = await this.placesService.deletePlace3(portada3);
     console.log(response);
@@ -159,7 +183,6 @@ export class AdminComponent {
     console.log(response);
   }
   // portada 4
-   
   async onClickDeletePortada4(portada4: Portada4) {
     const response = await this.placesService.deletePlace4(portada4);
     console.log(response);
@@ -170,7 +193,6 @@ export class AdminComponent {
     console.log(response);
   }
   // portada 5
-   
   async onClickDeletePortada5(portada5: Portada5) {
     const response = await this.placesService.deletePlace5(portada5);
     console.log(response);
