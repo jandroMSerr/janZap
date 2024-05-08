@@ -10,7 +10,7 @@ import { PlacesService } from 'src/app/shared/services/admin.service';
 export class CartButtonComponent {
 
   public itemCount: number = 1;
-  public isPopoverVisible: boolean = true;
+  public isPopoverVisible: boolean = false;
   places: Place[];
   totalPrice: number = 0;
   totalPriceString: string = '0€';
@@ -39,16 +39,18 @@ export class CartButtonComponent {
   }
   
 
-
-
-
   ngOnInit(): void {
     this.placesService.getProduct().subscribe(places => {
       this.places = places;
       
       // Reinicia el total
       this.totalPrice = 0;
+      this.itemCount = 0;
       
+      // Productos
+      this.places.forEach(product => {
+        this.itemCount++;
+      });
       // Suma los precios
       this.places.forEach(product => {
         this.totalPrice += Number(product.price); // Convertir a número

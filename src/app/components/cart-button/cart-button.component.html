@@ -1,4 +1,4 @@
-<div class="position-relative">
+<div class="cart-container">
     <button type="button" class="btn btn-secondary cart-button" (click)="togglePopover()">
       <i class="fa fa-shopping-cart"></i>
       <span class="badge badge-pill badge-danger">{{ itemCount > 99 ? '99+' : itemCount }}</span>
@@ -6,12 +6,21 @@
     <div *ngIf="isPopoverVisible" class="popover bs-popover-bottom">
       <!-- Contenido del popover -->
       <div class="popover-body">
-        <div *ngFor="let product of places">
-            
-          <h5>{{ product.name }}</h5>
-          <small>{{ product.price }}€</small>
-          <button class="btn delete-button" (click)="deleteProduct(product)">Eliminar</button>
-        </div>
+        <ul class="list-group">
+          <li class="list-group-item" *ngFor="let product of places;">
+            <div class="scroll-container">
+              <div class="d-flex align-items-center">
+                <img src="{{ product.picture }}" alt="{{ product.name }}" class="rounded mr-3 product-image">
+                <div class="flex-grow-1">
+                  <h5 class="mb-1">{{ product.name }}</h5>
+                  <p class="mb-1 price-text">{{ product.price }}€</p>
+                  <p class=" price-text">{{ product.size }}3</p>
+                </div>
+                <button class="btn btn-danger delete-button" (click)="deleteProduct(product)">Eliminar</button>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
