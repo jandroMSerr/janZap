@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs';
 import { Place } from 'src/app/shared/interfaces/admin';
 import { PlacesService } from 'src/app/shared/services/admin.service';
 

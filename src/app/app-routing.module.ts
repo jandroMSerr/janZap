@@ -11,6 +11,7 @@ import { ReturnsComponent } from './components/returns/returns.component';
 import { QuestionsComponent } from './components/questions/questions.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ShopdetailComponent } from './components/shopdetail/shopdetail.component';
+import { PurchasesummaryComponent } from './components/purchasesummary/purchasesummary.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'questions', component: QuestionsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'shop', component: ShopdetailComponent },
+  { path: 'purchasesummary', component: PurchasesummaryComponent },
   { path: 'home', component: homeComponent, canActivate: [AuthGuard] }
 ];
 

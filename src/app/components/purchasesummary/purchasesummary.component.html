@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>JanZap Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
+</head>
+
+<body >
+    <app-navbar></app-navbar>
+    <div class="card mt-5">
+       
+        <div class="row">
+            <div class="col-md-8 cart ">
+                <div class="title">
+                    <div class="row">
+                        <div class="col">
+                            <h4><b>Resumen de la compra</b></h4>
+                        </div>
+                        <div class="col align-self-center text-right text-muted">{{ itemCount > 99 ? '99+' : itemCount
+                            }} Articulos</div>
+                    </div>
+                </div>
+                <div class="row border-top border-bottom" *ngFor="let product of places;">
+                    <div class="row main align-items-center">
+                        <div class="col-2">
+                            <img class="img-fluid" src="{{ product.picture }}" alt="{{ product.name }}">
+                        </div>
+                        <div class="col">
+                            <div class="row text-muted">{{ product.name }}</div>
+                            <div class="row">{{ product.description }}</div>
+                        </div>
+                        <div class="col">
+
+                        </div>
+                        <div class="col">{{ product.price }} €<span (click)="deleteProduct(product)"
+                                class=" close">&#10005;</span></div>
+                    </div>
+                </div>
+
+                <div class="back-to-shop"><a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample"
+                        role="button" aria-expanded="false" aria-controls="collapseExample">
+                        ⭣ Introduce Información
+                    </a></div>
+            </div>
+
+            <div class="col-md-8 collapse" id="collapseExample">
+                <div class=" card card-body">
+                    <h3 class="text-center mb-4">DIRECCIÓN DE ENVÍO</h3>
+                    <form [formGroup]="shippingForm" (ngSubmit)="submitShippingForm()">
+                        <div class="row mb-3">
+                            <div class="row mb-3">
+
+                            <div class="col-md-6">
+                                    <label for="firstName" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="Nombre"
+                                        formControlName="firstName">
+                                    <div *ngIf="shippingForm.get('firstName') !== null && shippingForm.get('firstName')!.invalid && (shippingForm.get('firstName')!.touched || shippingForm.get('firstName')!.dirty)"
+                                        class="error-message">
+                                        <small *ngIf="shippingForm.get('firstName')!.errors?.['required']">El nombre es
+                                            obligatorio.</small>
+                                        <small *ngIf="shippingForm.get('firstName')!.errors?.['minlength']">El nombre
+                                            debe tener al menos 2 caracteres.</small>
+                                        <small *ngIf="shippingForm.get('firstName')!.errors?.['maxlength']">El nombre
+                                            debe tener como máximo 50 caracteres.</small>
+                                    </div>
+                            </div>
+                            <div class="col-md-6">
+                                    <label for="lastName" class="form-label">Apellidos</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="Apellidos"
+                                        formControlName="lastName">
+                                    <div *ngIf="shippingForm.get('lastName') !== null && shippingForm.get('lastName')!.invalid && (shippingForm.get('lastName')!.touched || shippingForm.get('lastName')!.dirty)"
+                                        class="error-message">
+                                        <small *ngIf="shippingForm.get('lastName')!.errors?.['required']">Los apellidos
+                                            son obligatorios.</small>
+                                        <small *ngIf="shippingForm.get('lastName')!.errors?.['minlength']">Los apellidos
+                                            deben tener al menos 2 caracteres.</small>
+                                        <small *ngIf="shippingForm.get('lastName')!.errors?.['maxlength']">Los apellidos
+                                            deben tener como máximo 50 caracteres.</small>
+                                    </div>
+                            </div>
+
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address" class="form-label">Dirección de la calle</label>
+                                <input type="text" class="form-control" id="address" placeholder="Dirección de la calle"
+                                    formControlName="address">
+                                <div *ngIf="shippingForm.get('address') !== null && shippingForm.get('address')!.invalid && (shippingForm.get('address')!.touched || shippingForm.get('address')!.dirty)"
+                                    class="error-message">
+                                    <small *ngIf="shippingForm.get('address')!.errors?.['required']">La dirección es
+                                        obligatoria.</small>
+                                    <small *ngIf="shippingForm.get('address')!.errors?.['minlength']">La dirección debe
+                                        tener al menos 5 caracteres.</small>
+                                    <small *ngIf="shippingForm.get('address')!.errors?.['maxlength']">La dirección debe
+                                        tener como máximo 100 caracteres.</small>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="address2" class="form-label">Añadir la línea de dirección 2
+                                    (opcional)</label>
+                                <input type="text" class="form-control" id="address2"
+                                    placeholder="Añadir la línea de dirección 2 (opcional)" formControlName="address2">
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-5">
+                                    <label for="country" class="form-label">País / Región</label>
+                                    <select id="country" class="form-select" formControlName="country">
+                                        <option selected disabled>Selecciona un país/región</option>
+                                        <option value="AL">Albania</option>
+                                        <option value="AD">Andorra</option>
+                                        <option value="AM">Armenia</option>
+                                        <option value="AT">Austria</option>
+                                        <option value="AZ">Azerbaiyán</option>
+                                        <!-- Agrega todas las opciones de países/regiones que necesites -->
+                                    </select>
+                                    <div *ngIf="shippingForm.get('country') !== null && shippingForm.get('country')!.invalid && (shippingForm.get('country')!.touched || shippingForm.get('country')!.dirty)"
+                                        class="error-message">
+                                        <small *ngIf="shippingForm.get('country')!.errors?.['required']">Selecciona un
+                                            país/región.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="postalCode" class="form-label">Código postal / ZIP</label>
+                                    <input type="text" class="form-control" id="postalCode"
+                                        placeholder="Código postal / ZIP" formControlName="postalCode">
+                                    <div *ngIf="shippingForm.get('postalCode') !== null && shippingForm.get('postalCode')!.invalid && (shippingForm.get('postalCode')!.touched || shippingForm.get('postalCode')!.dirty)"
+                                        class="error-message">
+                                        <small *ngIf="shippingForm.get('postalCode')!.errors?.['required']">El código
+                                            postal es obligatorio.</small>
+                                        <small *ngIf="shippingForm.get('postalCode')!.errors?.['pattern']">Introduce un
+                                            código postal válido.</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="state" class="form-label">Provincia</label>
+                                    <select id="state" class="form-select" formControlName="state">
+                                        <option selected disabled>Elige una opción...</option>
+                                        <option value="valencia">Valencia</option>
+                                        <option value="alicante">Alicante</option>
+                                        <option value="castellon">Castellón</option>
+                                        <!-- Agrega todas las opciones de provincias que necesites -->
+                                    </select>
+                                    <div *ngIf="shippingForm.get('state') !== null && shippingForm.get('state')!.invalid && (shippingForm.get('state')!.touched || shippingForm.get('state')!.dirty)"
+                                        class="error-message">
+                                        <small *ngIf="shippingForm.get('state')!.errors?.['required']">Selecciona una
+                                            provincia.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="city" class="form-label">Población</label>
+                                <input type="text" class="form-control" id="city" placeholder="Población"
+                                    formControlName="city">
+                                <div *ngIf="shippingForm.get('city') !== null && shippingForm.get('city')!.invalid && (shippingForm.get('city')!.touched || shippingForm.get('city')!.dirty)"
+                                    class="error-message">
+                                    <small *ngIf="shippingForm.get('city')!.errors?.['required']">La población es
+                                        obligatoria.</small>
+                                    <!-- Agrega más mensajes de validación si es necesario -->
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="phone" class="form-label">Teléfono</label>
+                                <input type="tel" class="form-control" id="phone" placeholder="Teléfono"
+                                    formControlName="phone">
+                                <div *ngIf="shippingForm.get('phone')?.invalid && (shippingForm.get('phone')?.touched || shippingForm.get('phone')?.dirty)"
+                                    class="error-message">
+                                    <small *ngIf="shippingForm.get('phone')?.errors?.['required']">El teléfono es
+                                        obligatorio.</small>
+                                    <small *ngIf="shippingForm.get('phone')?.errors?.['pattern']">El número de teléfono
+                                        debe tener 9 dígitos.</small>
+                                </div>
+                            </div>
+                        
+                            <button type="submit" class="btn btn-light"
+                                [disabled]="shippingForm.invalid">Pagar</button>
+                              
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+            <div class="col-md-4 summary">
+                <div>
+                    <h5><b>Resumen</b></h5>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col" style="padding-left:0;">Articulos {{ itemCount > 99 ? '99+' : itemCount }}</div>
+                    <div class="col text-right">Precio total: {{ totalPriceString }}</div>
+                </div>
+                <form>
+                    <p>Forma de envio</p>
+                    <select [(ngModel)]="selectedShippingOption" (change)="sendItem()" class="form-select"
+                        name="shippingOption">
+                        <option value="0">Standard - &euro;0.00</option>
+                        <option value="15">Premium - &euro;15.00</option>
+                        <option value="25">Ultra premium - &euro;25.00</option>
+                    </select>
+                    <div class="col text-right">Precio total: {{ allPrice }}</div>
+                </form>
+
+                <p>Código de descuento</p>
+                <input id="code" [(ngModel)]="discountCode" placeholder="Introduce tu código">
+                <div *ngIf="discountApplied">Descuento aplicado</div>
+                <div *ngIf="invalidDiscountCode">Código de descuento no válido</div>
+                <button type="button" class="mb-3 mt-2" (click)="applyDiscount()">Aplicar descuento</button>
+
+
+
+                <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
+                    <div class="col">Precio total</div>
+                    <div class="col text-right">{{ allPrice }} &euro; </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+
+</body>
+<app-footer class="mt-5"></app-footer>
+
+</html>

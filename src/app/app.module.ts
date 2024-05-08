@@ -25,6 +25,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 import { SmallcardComponent } from './components/smallcard/smallcard.component';
 import { CartButtonComponent } from './components/cart-button/cart-button.component';
+import { PurchasesummaryComponent } from './components/purchasesummary/purchasesummary.component';
 
 defineCustomElements(window);
 
@@ -44,7 +45,8 @@ defineCustomElements(window);
     NavbarComponent,
     FooterComponent,
     SmallcardComponent,
-    CartButtonComponent
+    CartButtonComponent,
+    PurchasesummaryComponent
   ],
   imports: [
     BrowserModule,
