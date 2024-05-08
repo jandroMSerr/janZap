@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -6,22 +6,40 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
-export class ContactComponent {
-  formData = {
-    nombre: '',
-    email: '',
-    mensaje: ''
-  };
+export class ContactComponent implements OnInit {
+  contactForm!: FormGroup; 
+  isLoading: boolean = false;
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  ngOnInit(): void {
+    this.contactForm = this.formBuilder.group({
+      nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
+      email: ['', [Validators.required, Validators.pattern('[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}')]],
+      mensaje: ['', [Validators.required, Validators.minLength(10)]]
+    });
+  }
 
   submitForm() {
-    if (!this.formData.nombre || !this.formData.email || !this.formData.mensaje) {
-      alert('Por favor, rellena todos los campos.');
-      return;
+    if (this.contactForm.valid) {
+      this.isLoading = true;
+      setTimeout(() => {
+        console.log('Formulario enviado:', this.contactForm.value);
+        this.isLoading = false;
+        this.contactForm.reset(); // Restablecer el formulario después del envío exitoso
+      }, 2000); // Simulación de carga durante 2 segundos.
+    } else {
+      this.markFormGroupTouched(this.contactForm);
     }
-    
-    // Aquí puedes agregar la lógica para enviar el formulario, como enviarlo a través de un servicio HTTP
-    alert('El formulario se ha enviado.');
-    // Puedes agregar lógica adicional aquí, como restablecer el formulario o navegar a otra página
   }
-  
+
+  private markFormGroupTouched(formGroup: FormGroup) {
+    Object.values(formGroup.controls).forEach(control => {
+      control.markAsTouched();
+
+      if (control instanceof FormGroup) {
+        this.markFormGroupTouched(control);
+      }
+    });
+  }
 }

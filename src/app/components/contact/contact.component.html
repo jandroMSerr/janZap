@@ -16,29 +16,64 @@
 <body>
     <app-navbar></app-navbar>
 
-<div class="container" style="margin-top: 6rem; margin-bottom: 6rem;">
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <form (ngSubmit)="submitForm()" #contactForm="ngForm">
-          <div class="mb-3">
-            <label for="nombre" class="form-label">Nombre</label>
-            <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="formData.nombre" required>
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="formData.email" required>
-          </div>
-          <div class="mb-3">
-            <label for="mensaje" class="form-label">Mensaje</label>
-            <textarea class="form-control" id="mensaje" name="mensaje" [(ngModel)]="formData.mensaje" required></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
-        </form>
+    <div class="container contact-container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form (ngSubmit)="submitForm()" [formGroup]="contactForm" novalidate>
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input
+                type="text"
+                class="form-control"
+                id="nombre"
+                formControlName="nombre"
+              />
+              <div *ngIf="contactForm.get('nombre') && contactForm.get('nombre')!.invalid && (contactForm.get('nombre')!.touched || contactForm.get('nombre')!.dirty)" class="error-message">
+                <small *ngIf="contactForm.get('nombre')!.errors?.['required']">El nombre es obligatorio.</small>
+                <small *ngIf="contactForm.get('nombre')!.errors?.['minlength']">El nombre debe tener al menos 2 caracteres.</small>
+                <small *ngIf="contactForm.get('nombre')!.errors?.['maxlength']">El nombre debe tener como máximo 50 caracteres.</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+              />
+              <div *ngIf="contactForm.get('email') && contactForm.get('email')!.invalid && (contactForm.get('email')!.touched || contactForm.get('email')!.dirty)" class="error-message">
+                <small *ngIf="contactForm.get('email')!.errors?.['required']">El email es obligatorio.</small>
+                <small *ngIf="contactForm.get('email')!.errors?.['pattern']">Introduce un email válido.</small>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="mensaje" class="form-label">Mensaje</label>
+              <textarea
+                class="form-control"
+                id="mensaje"
+                formControlName="mensaje"
+              ></textarea>
+              <div *ngIf="contactForm.get('mensaje') && contactForm.get('mensaje')!.invalid && (contactForm.get('mensaje')!.touched || contactForm.get('mensaje')!.dirty)" class="error-message">
+                <small *ngIf="contactForm.get('mensaje')!.errors?.['required']">El mensaje es obligatorio.</small>
+                <small *ngIf="contactForm.get('mensaje')!.errors?.['minlength']">El mensaje debe tener al menos 10 caracteres.</small>
+              </div>
+            </div>
+            <div *ngIf="contactForm.errors" class="mb-3">
+              <small class="text-danger">Por favor, revisa el formulario y corrige los errores.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <!-- Agrega un spinner de carga -->
+          </form>
+
+          <div *ngIf="isLoading" class="spinner-border text-primary mt-2 " role="status">
+            <span class="visually-hidden">Cargando...</span>
+          </div> 
+          <div *ngIf="isLoading" class="mt-3">Gracias por su comentario</div>
+        </div>
       </div>
     </div>
-  </div>
-  
-<app-footer></app-footer>
+
+    <app-footer></app-footer>
 </body>
 </html>
-

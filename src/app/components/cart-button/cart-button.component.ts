@@ -9,7 +9,7 @@ import { PlacesService } from 'src/app/shared/services/admin.service';
 })
 export class CartButtonComponent {
 
-  public itemCount: number = 101;
+  public itemCount: number = 1;
   public isPopoverVisible: boolean = true;
   places: Place[];
   totalPrice: number = 0;
