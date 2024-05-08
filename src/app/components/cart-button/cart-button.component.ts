@@ -1,18 +1,19 @@
 import { Component } from '@angular/core';
-import { map } from 'rxjs';
 import { Place } from 'src/app/shared/interfaces/admin';
 import { PlacesService } from 'src/app/shared/services/admin.service';
 
 @Component({
-  selector: 'app-smallcard',
-  templateUrl: './smallcard.component.html',
-  styleUrls: ['./smallcard.component.scss']
+  selector: 'app-cart-button',
+  templateUrl: './cart-button.component.html',
+  styleUrls: ['./cart-button.component.scss']
 })
-export class SmallcardComponent {
+export class CartButtonComponent {
+
+  public itemCount: number = 101;
+  public isPopoverVisible: boolean = true;
   places: Place[];
   totalPrice: number = 0;
   totalPriceString: string = '0€';
-
 
   constructor(private placesService: PlacesService,) {
 
@@ -32,6 +33,14 @@ export class SmallcardComponent {
 
     }
   }
+
+  togglePopover(): void {
+    this.isPopoverVisible = !this.isPopoverVisible;
+  }
+  
+
+
+
 
   ngOnInit(): void {
     this.placesService.getProduct().subscribe(places => {

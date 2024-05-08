@@ -1,0 +1,40 @@
+.cart-button {
+  position: relative; // Para que el popover esté posicionado relativo a este botón
+}
+
+.popover {
+  display: none;
+}
+
+.popover.bs-popover-bottom {
+  width: 200px;
+  display: block;
+  position: absolute;
+  top: calc(100% + 5px); // Distancia entre el botón y el popover
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: #fff; // Color de fondo del popover
+  border: 1px solid rgba(0, 0, 0, 0.125); // Borde del popover
+  border-radius: 5px; // Radio de borde del popover
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); // Sombra del popover
+  padding: 10px; // Espaciado interno del popover
+}
+
+.popover.bs-popover-bottom .popover-body {
+  max-height: 200px; // Altura máxima del cuerpo del popover
+  overflow-y: auto; // Desplazamiento vertical del cuerpo del popover si hay mucho contenido
+}
+
+.popover.bs-popover-bottom .popover-body h5 {
+  margin-bottom: 5px; // Espaciado inferior para los títulos del producto
+}
+
+.popover.bs-popover-bottom .popover-body small {
+  display: block; // Mostrar el precio del producto en una línea separada
+  margin-bottom: 10px; // Espaciado inferior para los precios de los productos
+}
+
+.popover.bs-popover-bottom .popover-body .delete-button {
+  margin-top: 10px; // Espaciado superior para los botones "Eliminar"
+}

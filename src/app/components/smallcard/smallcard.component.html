@@ -1,22 +1,25 @@
-  <div class="card card-list">
-      <h3 class="product-list-title">Cesta de la compra</h3>
-      <div class="list-group mt-2" *ngFor="let products of places;">
-        <ol class="list-group list-group-numbered mt-2 border-0">
-          <div class="d-flex w-100 space-around border-0">
-            <img src="{{products.picture}}" style="width: 60px; height: auto; margin-left: 5px; margin-bottom: 5px;"
-              class="rounded ml-2">
-            <h5 class="mb-1 d-flex align-items-center">{{products.name}}</h5>
-            <small class="d-flex align-items-center price-text">{{products.price}}€</small>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-              <button class="btn delete-button" (click)="deleteProducts(products)">Eliminar</button>
+<div class="card card-list">
+  <h3 class="product-list-title">Cesta de la compra</h3>
+  <div class="list-group mt-2">
+    <ol class="list-group list-group-numbered border-0">
+      <li class="list-group-item" *ngFor="let product of places;">
+        <div class="scroll-container">
+          <div class="d-flex align-items-center">
+            <img src="{{ product.picture }}" alt="{{ product.name }}" class="rounded mr-3 product-image">
+            <div class="flex-grow-1">
+              <h5 class="mb-1">{{ product.name }}</h5>
+              <p class="mb-1 price-text">{{ product.price }}€</p>
             </div>
+            <button class="btn btn-sm btn-outline-danger" (click)="deleteProduct(product)">Eliminar</button>
           </div>
-        </ol>
-      </div>
-    <div class="mt-2">
-      <p class="price-text">Pecio total : {{ totalPriceString }}</p>
-    </div>
-    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-2">
-      <button class="btn btn-outline-dark mb-2">Comprar</button>
-    </div>
+        </div>
+      </li>
+    </ol>
   </div>
+  <div class="mt-2">
+    <p class="price-text">Precio total: {{ totalPriceString }}</p>
+  </div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-2">
+    <button class="btn btn-dark">Comprar</button>
+  </div>
+</div>

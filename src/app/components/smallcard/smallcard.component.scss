@@ -1,18 +1,11 @@
-.card-list{
-    background-color: rgba($color: #ffffff, $alpha: 0.6);
-    text-align: center;
-    position: fixed;
-    margin-top: 5rem;
-    margin-right: 2rem;
-}
-.price-text{
-    font-size: 1rem;
-}
-.delete-button{
-    color: red;
-    font-size: 0.8rem;
-}
-.product-list-title{
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
+.scroll-container {
+    width: 300px;
+    max-height: 400px; /* Altura máxima del contenedor */
+    overflow-y: auto; /* Habilitar el desplazamiento vertical cuando el contenido exceda la altura */
+  }
+  
+  .product-image {
+    width: 60px;
+    height: auto;
+  }
+  

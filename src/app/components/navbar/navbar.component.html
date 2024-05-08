@@ -1,23 +1,23 @@
 <nav class="navbar navbar-expand-md fixed-top">
-      
-    <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#menu"><span
-          class="visually-hidden"></span><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav flex-grow-1 justify-content-between">
-
-          <li class="nav-item"><a class="nav-link" href="/home">JanZap</a></li>
-          <li class="nav-item"><a class="nav-link" href="/shop">Catálogo</a></li>
-          <li class="nav-item"><a class="nav-link" href="/shipping">Envíos</a></li>
-          <li class="nav-item"><a class="nav-link" href="/returns">Devoluciones</a></li>
-          <li class="nav-item"><a class="nav-link" href="/questions">Preguntas frecuentes</a></li>
-          <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
-          <li class="nav-item d-none d-xs-block d-md-block"><a class="nav-link" href="/login"><i
-                class="fa fa-user"></i></a>
-            </li>
-            <li class="nav-item d-none d-xs-block d-md-block"><a class="nav-link" href="#"><i
-                  class="fa fa-shopping-cart"></i></a>
-              </li>
-        </ul>
-      </div>
+  <div class="container">
+    <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#menu">
+      <span class="visually-hidden"></span>
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav flex-grow-1 justify-content-between">
+        <li class="nav-item"><a class="nav-link" href="/home">JanZap</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shop">Catálogo</a></li>
+        <li class="nav-item"><a class="nav-link" href="/shipping">Envíos</a></li>
+        <li class="nav-item"><a class="nav-link" href="/returns">Devoluciones</a></li>
+        <li class="nav-item"><a class="nav-link" href="/questions">Preguntas frecuentes</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">Contacto</a></li>
+        <li class="nav-item d-none d-xs-block d-md-block"><a class="nav-link" href="/login"><i class="fa fa-user"></i></a></li>
+        <!-- Reemplazar el botón del carrito existente con el componente -->
+        <li class="nav-item d-none d-xs-block d-md-block">
+          <app-cart-button></app-cart-button>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

@@ -9,5 +9,5 @@ from'@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
- 
+  
 }

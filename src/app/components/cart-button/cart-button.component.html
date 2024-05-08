@@ -1,0 +1,18 @@
+<div class="position-relative">
+    <button type="button" class="btn btn-secondary cart-button" (click)="togglePopover()">
+      <i class="fa fa-shopping-cart"></i>
+      <span class="badge badge-pill badge-danger">{{ itemCount > 99 ? '99+' : itemCount }}</span>
+    </button>
+    <div *ngIf="isPopoverVisible" class="popover bs-popover-bottom">
+      <!-- Contenido del popover -->
+      <div class="popover-body">
+        <div *ngFor="let product of places">
+            
+          <h5>{{ product.name }}</h5>
+          <small>{{ product.price }}€</small>
+          <button class="btn delete-button" (click)="deleteProduct(product)">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
