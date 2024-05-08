@@ -24,31 +24,31 @@
         <div class="row">
             <div class="col-12 mt-5">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row mb-4">
                         <div class="col-10 mt-5">
                             <div class="container">
                                 <div class=" row ">
-                                    <div class="card" *ngFor="let products of places" style="width: 18rem; margin-left: 15px;">
-                                        <img class="card-img" src="{{products.picture}}"
+                                    <div class="card product-card mt-2" *ngFor="let products of places"
+                                        style="width: 18rem; margin-left: 15px; text-align: center;">
+                                        <img class="card-img mt-2" src="{{products.picture}}"
                                             style="width:auto; height: 200px;" alt="Card image cap">
                                         <div class="card-body">
-                                            <h3>{{products.name}}</h3>
-                                            <p class="h3 py-2">{{products.price}}€</p>
+                                            <p class="product-name">{{products.name}}<p>
+                                            <p class="product-price">{{products.price}}€</p>
 
                                             <div class="progress" role="progressbar"
                                                 aria-label="Animated striped example">
-                                                <div class="progress-bar progress-bar-striped  bg-dark progress-bar-animated"
+                                                <div class="progress-bar progress-bar-striped  bg-warning progress-bar-animated"
                                                     style="width: {{products.rating}}%"></div>
                                             </div>
                                             <p class="py-2">
-                                                <span class="list-inline-item text-dark">Rating {{products.rating}} |
-                                                    {{products.comments}} Comments</span>
+                                                <span class="list-inline-item text-dark">Puntuación :
+                                                    {{products.rating}} <br>
+                                                    Comentarios : {{products.comments}}</span>
                                             </p>
-                                            <h6>Description:</h6>
-                                            <p>{{products.description}}</p>
-                                            <p class="text-muted"><strong>{{products.color}}</strong></p>
+                                            <p class="product-description">{{products.description}}</p>
                                             <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
-                                                <button class="btn btn-black" (click)="anadirCesta(products)">Añadir a
+                                                <button class="btn btn-dark" (click)="anadirCesta(products)">Añadir a
                                                     la cesta</button>
                                             </div>
                                         </div>

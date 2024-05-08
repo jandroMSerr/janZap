@@ -1,0 +1,15 @@
+
+body{
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2Fshop%2Fbackground.jpg?alt=media);
+    background-size: cover;
+}
+.product-name{
+    font-size: 1.5rem;
+}
+.product-price{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.product-card{
+    background-color: rgba($color: #ffffff, $alpha: 0.6);
+}
