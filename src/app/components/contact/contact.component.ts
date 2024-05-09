@@ -26,8 +26,8 @@ export class ContactComponent implements OnInit {
       setTimeout(() => {
         console.log('Formulario enviado:', this.contactForm.value);
         this.isLoading = false;
-        this.contactForm.reset(); // Restablecer el formulario después del envío exitoso
-      }, 2000); // Simulación de carga durante 2 segundos.
+        this.contactForm.reset();
+      }, 5000);
     } else {
       this.markFormGroupTouched(this.contactForm);
     }

@@ -15,19 +15,18 @@
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css">
 </head>
 
-<body >
+<body>
     <app-navbar></app-navbar>
-    <div class="card mt-5">
-       
-        <div class="row">
+    <div class="card purchase-card mb-3">
+       <div class="row">
             <div class="col-md-8 cart ">
                 <div class="title">
                     <div class="row">
                         <div class="col">
-                            <h4><b>Resumen de la compra</b></h4>
+                            <h3><b>Resumen de la compra</b></h3>
                         </div>
                         <div class="col align-self-center text-right text-muted">{{ itemCount > 99 ? '99+' : itemCount
-                            }} Articulos</div>
+                            }} Artículos en la cesta</div>
                     </div>
                 </div>
                 <div class="row border-top border-bottom" *ngFor="let product of places;">
@@ -36,24 +35,31 @@
                             <img class="img-fluid" src="{{ product.picture }}" alt="{{ product.name }}">
                         </div>
                         <div class="col">
-                            <div class="row text-muted">{{ product.name }}</div>
-                            <div class="row">{{ product.description }}</div>
+                            <div class="row text-muted">
+                                <p>{{ product.name }}</p>
+                                <p>Talla : {{product.size}}</p>
+                            </div>
+                            
                         </div>
                         <div class="col">
 
                         </div>
-                        <div class="col">{{ product.price }} €<span (click)="deleteProduct(product)"
-                                class=" close">&#10005;</span></div>
+                        <div class="col">
+                            <span class="product-price">{{ product.price }} €</span>
+                            <span (click)="deleteProduct(product)"
+                                class=" close text-danger"><i class="fa fa-trash ml-2"></i></span></div>
                     </div>
                 </div>
 
-                <div class="back-to-shop"><a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample"
+                <div class="go-to-shipping">
+                    <a class="btn btn-dark" data-bs-toggle="collapse" href="#collapseExample"
                         role="button" aria-expanded="false" aria-controls="collapseExample">
-                        ⭣ Introduce Información
-                    </a></div>
+                        Siguiente paso
+                    </a>
+                </div>
             </div>
 
-            <div class="col-md-8 collapse" id="collapseExample">
+            <div class="col-md-8 collapse mb-3" id="collapseExample">
                 <div class=" card card-body">
                     <h3 class="text-center mb-4">DIRECCIÓN DE ENVÍO</h3>
                     <form [formGroup]="shippingForm" (ngSubmit)="submitShippingForm()">
@@ -131,9 +137,9 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="postalCode" class="form-label">Código postal / ZIP</label>
+                                    <label for="postalCode" class="form-label">Código postal</label>
                                     <input type="text" class="form-control" id="postalCode"
-                                        placeholder="Código postal / ZIP" formControlName="postalCode">
+                                        placeholder="Código postal" formControlName="postalCode">
                                     <div *ngIf="shippingForm.get('postalCode') !== null && shippingForm.get('postalCode')!.invalid && (shippingForm.get('postalCode')!.touched || shippingForm.get('postalCode')!.dirty)"
                                         class="error-message">
                                         <small *ngIf="shippingForm.get('postalCode')!.errors?.['required']">El código
@@ -184,7 +190,7 @@
                                 </div>
                             </div>
                         
-                            <button type="submit" class="btn btn-light"
+                            <button type="submit" class="btn btn-dark"
                                 [disabled]="shippingForm.invalid">Pagar</button>
                               
                         </div>
@@ -198,22 +204,17 @@
                     <h5><b>Resumen</b></h5>
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col" style="padding-left:0;">Articulos {{ itemCount > 99 ? '99+' : itemCount }}</div>
-                    <div class="col text-right">Precio total: {{ totalPriceString }}</div>
-                </div>
+            
                 <form>
-                    <p>Forma de envio</p>
+                    <p>Forma de envio :</p>
                     <select [(ngModel)]="selectedShippingOption" (change)="sendItem()" class="form-select"
                         name="shippingOption">
-                        <option value="0">Standard - &euro;0.00</option>
-                        <option value="15">Premium - &euro;15.00</option>
-                        <option value="25">Ultra premium - &euro;25.00</option>
+                        <option value="0">Standard - 0.00 €</option>
+                        <option value="15">Express - 9,95 €</option>
                     </select>
-                    <div class="col text-right">Precio total: {{ allPrice }}</div>
                 </form>
 
-                <p>Código de descuento</p>
+                <p>Código promocional :</p>
                 <input id="code" [(ngModel)]="discountCode" placeholder="Introduce tu código">
                 <div *ngIf="discountApplied">Descuento aplicado</div>
                 <div *ngIf="invalidDiscountCode">Código de descuento no válido</div>
@@ -222,8 +223,8 @@
 
 
                 <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                    <div class="col">Precio total</div>
-                    <div class="col text-right">{{ allPrice }} &euro; </div>
+                    <div class="col">Precio total : </div>
+                    <div class="col text-right" style="font-weight: bold;">{{ allPrice }} &euro; </div>
                 </div>
 
                 

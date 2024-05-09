@@ -1,25 +1,26 @@
 <div class="card card-list">
-  <h3 class="product-list-title">Cesta de la compra</h3>
+  <h3 class="product-list-title mt-2">Cesta de la compra</h3>
   <div class="list-group mt-2">
     <ol class="list-group list-group-numbered border-0">
       <li class="list-group-item" *ngFor="let product of places;">
         <div class="scroll-container">
           <div class="d-flex align-items-center">
-            <img src="{{ product.picture }}" alt="{{ product.name }}" class="rounded mr-3 product-image">
-            <div class="flex-grow-1">
-              <h5 class="mb-1">{{ product.name }}</h5>
+            <img src="{{ product.picture }}" alt="{{ product.name }}" class="rounded product-image">
+            <div class="flex-grow-1 resume-container">
+              <h4 class="mb-1">{{ product.name }}</h4>
               <p class="mb-1 price-text">{{ product.price }}€</p>
             </div>
-            <button class="btn btn-sm btn-outline-danger" (click)="deleteProduct(product)">Eliminar</button>
+            <button class="btn btn-sm btn-outline-danger" (click)="deleteProduct(product)"><i class="fa fa-trash"></i></button>
           </div>
         </div>
       </li>
     </ol>
   </div>
   <div class="mt-2">
-    <p class="price-text">Precio total: {{ totalPriceString }}</p>
+    <p class="price-text">Precio total</p>
+    <p class="price-number">{{ totalPriceString }}</p>
   </div>
   <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-2">
-    <a href="/purchasesummary" class="btn btn-dark">Comprar</a>
+    <a href="/purchasesummary" class="btn btn-dark mb-2">Comprar</a>
   </div>
 </div>

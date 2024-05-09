@@ -1,13 +1,34 @@
-/* Estilos para el formulario de contacto */
+body{
+  background-image: url(https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2Flogin%2Fzapas.png?alt=media);
+  background-size: cover;
+  background-position: 0%;
+}
+.contact-card{
+  margin-top: 10rem;
+  margin-bottom: 5rem;
+  background-color: rgba($color: #ffffff, $alpha: 0.7);
+}
+h2{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.contact-subTitle{
+  font-size: 1.2em;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
 .contact-container {
-  margin-top: 6rem;
-  margin-bottom: 6rem;
-
   .error-message {
     margin-top: 0.5rem;
+    color: red;
   }
 
   textarea {
-    min-height: 150px; // Ajusta la altura mínima del área de texto
+    min-height: 150px;
+  }
+  .btn{
+    margin-left: 43%;
+    margin-bottom: 2rem;
   }
 }

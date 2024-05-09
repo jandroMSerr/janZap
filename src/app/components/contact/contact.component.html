@@ -16,17 +16,20 @@
 <body>
     <app-navbar></app-navbar>
 
-    <div class="container contact-container">
+    <div class="container contact-container mt-0">
       <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-6 card contact-card">
+          <h2 style="text-align: center; color: black;">- CONTACTO -</h2>
+          <p class="contact-subTitle">¿Necesitas ayuda? <br>Nuestro equipo está aquí para lo que necesites.</p>
           <form (ngSubmit)="submitForm()" [formGroup]="contactForm" novalidate>
             <div class="mb-3">
-              <label for="nombre" class="form-label">Nombre</label>
+              <label for="nombre" class="form-label" style="font-weight: bold;">Nombre</label>
               <input
                 type="text"
                 class="form-control"
                 id="nombre"
                 formControlName="nombre"
+                placeholder="Example Example"
               />
               <div *ngIf="contactForm.get('nombre') && contactForm.get('nombre')!.invalid && (contactForm.get('nombre')!.touched || contactForm.get('nombre')!.dirty)" class="error-message">
                 <small *ngIf="contactForm.get('nombre')!.errors?.['required']">El nombre es obligatorio.</small>
@@ -35,12 +38,13 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
+              <label for="email" class="form-label" style="font-weight: bold;">Email</label>
               <input
                 type="email"
                 class="form-control"
                 id="email"
                 formControlName="email"
+                placeholder="example@janzap.es"
               />
               <div *ngIf="contactForm.get('email') && contactForm.get('email')!.invalid && (contactForm.get('email')!.touched || contactForm.get('email')!.dirty)" class="error-message">
                 <small *ngIf="contactForm.get('email')!.errors?.['required']">El email es obligatorio.</small>
@@ -48,11 +52,12 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="mensaje" class="form-label">Mensaje</label>
+              <label for="mensaje" class="form-label" style="font-weight: bold;">Mensaje</label>
               <textarea
                 class="form-control"
                 id="mensaje"
                 formControlName="mensaje"
+                placeholder="Mínimo 10 caracteres."
               ></textarea>
               <div *ngIf="contactForm.get('mensaje') && contactForm.get('mensaje')!.invalid && (contactForm.get('mensaje')!.touched || contactForm.get('mensaje')!.dirty)" class="error-message">
                 <small *ngIf="contactForm.get('mensaje')!.errors?.['required']">El mensaje es obligatorio.</small>
@@ -60,15 +65,14 @@
               </div>
             </div>
             <div *ngIf="contactForm.errors" class="mb-3">
-              <small class="text-danger">Por favor, revisa el formulario y corrige los errores.</small>
+              <small class="text-danger">Por favor, revisa el formulario y corrige los avisos.</small>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <!-- Agrega un spinner de carga -->
+            <button type="submit" class="btn btn-dark">Enviar</button>
           </form>
 
           <div *ngIf="isLoading" class="spinner-border text-primary mt-5" role="status">
             <span class="visually-hidden">Cargando...</span>
-            <div class="mt-3">Gracias por su comentario</div>
+            <div class="mt-3">Gracias por su comentario, nos pondremos en contacto lo antes posible.</div>
           </div> 
         </div>
       </div>

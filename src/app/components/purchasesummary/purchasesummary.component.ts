@@ -94,51 +94,38 @@ export class PurchasesummaryComponent {
         break;
     }
   }
+   //Inicio  - Descuento en cesta de la copra
   applyDiscount() {
-    // Realizar lógica para aplicar el descuento según el código ingresado
     const discountAmount = this.getDiscountAmount(this.discountCode);
 
     if (discountAmount > 0) {
-      // Aplicar descuento al precio total
       this.allPrice -= discountAmount;
-      // Marcar que se ha aplicado el descuento
       this.discountApplied = true;
-      // Limpiar el campo de código de descuento
       this.discountCode = '';
-      // Ocultar mensaje de error
       this.invalidDiscountCode = false;
     } else {
-      // Código de descuento no válido o no encontrado
-      // Mostrar mensaje de error
       this.invalidDiscountCode = true;
     }
   }
 
-
   getDiscountAmount(code: string): number {
-    // Implementa la lógica para buscar el código de descuento en una lista o base de datos
-    // y devolver el valor del descuento asociado
-    // En este ejemplo, devolvemos diferentes valores para diferentes códigos de descuento
     switch (code) {
-      case 'DESCUENTO10':
-        return 10; // Descuento de 10 euros
-      case 'DESCUENTO15':
-        return 15; // Descuento de 15 euros
+      case 'JANZAP10':
+        return 10;
+      case 'JANZAP15':
+        return 15;
       default:
-        return 0; // Código no válido
+        return 0;
     }
   }
-
-
 
   async deleteProduct(place: Place) {
     const response = await this.placesService.deleteProduct(place);
     console.log(response);
   }
-
+  //Fin - Descuento cesta compra
 
   createShippingForm(): void {
-    // Definir el FormGroup y sus controles
     this.shippingForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
       lastName: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
@@ -152,16 +139,15 @@ export class PurchasesummaryComponent {
     });
   }
 
+  //Inicio - Envio y borrado de formulario
   submitShippingForm(): void {
     if (this.shippingForm.valid && this.selectedShippingOption) {
-      // Envío del formulario y lógica adicional
       console.log(this.shippingForm.value);
-      this.shippingForm.reset(); // Reiniciar el formulario después del envío
-      alert('Enviado al almacen');
+      this.shippingForm.reset(); 
+      alert('¡¡SU PEDIDO SE HA REALIZADO CON ÉXTIO');
     } else {
-      // Marcar los campos inválidos como tocados para mostrar los mensajes de error
       this.markFormGroupTouched(this.shippingForm);
-      alert('Revisa que esten todos los campos requeridos o el envio este correcto');
+      alert('Revise que todos los campso estén completos.');
     }
   }
 
@@ -174,5 +160,6 @@ export class PurchasesummaryComponent {
       }
     });
   }
+  //Fin - Envío y borrado de formulario
 
 }

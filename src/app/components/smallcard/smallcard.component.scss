@@ -1,11 +1,23 @@
 .scroll-container {
     width: 300px;
-    max-height: 400px; /* Altura máxima del contenedor */
-    overflow-y: auto; /* Habilitar el desplazamiento vertical cuando el contenido exceda la altura */
+    max-height: 400px;
+    overflow-y: auto; /* Se habilita el desplazamiento vertical cuando el contenido exceda la altura */
   }
-  
+
   .product-image {
     width: 60px;
     height: auto;
+    margin-right: 1rem;
   }
-  
+  .fa{
+    font-size: 1.5rem;
+  }
+  .price-text, .price-number, .product-list-title{
+    text-align: center;
+  }
+  .price-number{
+    font-weight: bold;
+  }
+  .resume-container{
+    margin-right: 5rem;
+  }
