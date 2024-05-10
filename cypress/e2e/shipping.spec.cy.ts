@@ -1,7 +1,11 @@
 describe('Shipping', () => {
+  beforeEach(function () {
+    cy.fixture('dataApp').then((data) => {
+      this.data = data;
+    });
+  });
 
-    it('Should test the texts are correct', () => {
-  
+  it('Should test the texts are correct', () => {
     cy.visit('http://localhost:4200/shipping');
     cy.contains('ENVÍOS Y ENTREGAS');
     cy.contains('1. Plazos de entrega y gastos de envío.');
@@ -13,5 +17,4 @@ describe('Shipping', () => {
     cy.contains('7. Aduanas.');
     cy.contains('8. Responsabilidad de JanZap sobre los envíos.');
   });
-  
 });

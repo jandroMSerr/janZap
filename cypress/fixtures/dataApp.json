@@ -1,0 +1,21 @@
+{
+  "name": "Alejandro Martínez",
+  "email": "jandrosmartinez@gmail.com",
+  "password": "hola1234",
+  "testText": "hola hola, este es un texto de prueba para cypress",
+  "nameError" :"El nombre debe tener al menos 2 caracteres.",
+  "emailNeeded" : "El email es obligatorio.",
+  "validEmail" : "Introduce un email válido.",
+  "validMessage" : "El mensaje debe tener al menos 10 caracteres.",
+  "loginURL" : "http://localhost:4200/login",
+  "homeURL" : "http://localhost:4200/home",
+  "catalogURL" : "http://localhost:4200/shop",
+  "shippingURL" : "http://localhost:4200/shipping",
+  "returnsURL" : "http://localhost:4200/returns",
+  "questionsURL" : "http://localhost:4200/questions",
+  "contactURL" : "http://localhost:4200/contact",
+  "registerURL" : "http://localhost:4200/register",
+  "accordionText1" : "Janzap surge con el propósito de ofrecer la última tendencia en artículos de marca al mejor precio posible, con gastos de envío gratis y de manera segura. Trabajamos como intermediario entre nuestro proveedor y el cliente, mejorando así la experiencia de usuario final con una atención totalmente personalizada y rápida. Nuestra principal prioridad es mantener a los clientes satisfechos en todo momento.",
+  "accordionText2" : "Si, todas las zapatillas se envían con la caja original.",
+  "accordionText3" : "Podemos permitirnos estos precios gracias a la importación de productos directamente desde las fábricas situadas en China"
+}
