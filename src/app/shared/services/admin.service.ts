@@ -15,7 +15,7 @@ export class PlacesService {
     this._productscesta = new BehaviorSubject<Place[]>([]);
   }
 
-  // tienda //
+  // tienda 
   addNewProduct( productscesta: Place){
     this.cardProducts.push(productscesta);
     this._productscesta.next(this.cardProducts);
@@ -35,7 +35,7 @@ export class PlacesService {
     return deleteDoc(placeDocRef);
   }
 
-  // Fin tienda //
+  // Fin tienda
 
   async trakePicture(promptLabelHeader: string) {
     return await Camera.getPhoto({
@@ -48,24 +48,23 @@ export class PlacesService {
       promptLabelPicture: 'Toma una foto'
     });
   };
-
+  //PutProducto
   addPlace(place: Place) {
     const placeRef = collection(this.firestore, 'productos');
     return addDoc(placeRef, place);
-
   }
-
+  //Getid
   getPlaces(): Observable<Place[]> {
     const placeRef = collection(this.firestore, 'productos');
     return collectionData(placeRef, { idField: 'id' }) as Observable<Place[]>;
   }
-
+  //DeleteId
   deletePlaces(place: Place) {
     const placeDocRef = doc(this.firestore, `productos/${place.id}`);
     return deleteDoc(placeDocRef);
   }
 
-  // portada4
+  
 
   addPortada2(portada2: Portada2) {
     const placeRef = collection(this.firestore, 'portada2');

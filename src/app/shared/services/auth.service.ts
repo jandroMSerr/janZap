@@ -15,7 +15,8 @@ export class AuthService {
     private router: Router,
     private ngZone: NgZone
   ) {
-    // OBSERVER save user in localStorage (log-in) and setting up null when log-out
+    
+    //Se hace la autenticación del estatus cuando te registras
     this.firebaseAuthenticationService.authState.subscribe((user) => {
       if (user) {
         this.userData = user;
