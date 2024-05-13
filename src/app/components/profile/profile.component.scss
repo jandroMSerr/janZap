@@ -1,0 +1,28 @@
+body {
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2Flogin%2Fzapas.png?alt=media);
+    background-size: cover;
+}
+.card-container {
+    width: 25rem;
+    margin: auto;
+    
+}
+.card-profile img {
+    margin: auto;
+    max-width: 15rem;
+    height: auto;
+    margin-top: 2rem;
+
+}
+
+.card-body text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{
+    width: 15rem;
+}
+.profile-email{
+    color: red;
+}
