@@ -12,6 +12,7 @@ import { QuestionsComponent } from './components/questions/questions.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ShopdetailComponent } from './components/shopdetail/shopdetail.component';
 import { PurchasesummaryComponent } from './components/purchasesummary/purchasesummary.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'shop', component: ShopdetailComponent },
   { path: 'purchasesummary', component: PurchasesummaryComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'home', component: homeComponent, canActivate: [AuthGuard] }
 ];
 
