@@ -97,7 +97,7 @@ export class AuthService {
   forgotPassword(email: string) {
     return this.firebaseAuthenticationService.sendPasswordResetEmail(email)
       .then(() => {
-        this.router.navigate(['/login']);
+        alert("Revisa tu correo")
       })
       .catch((error) => {
         alert(' No has introducido ningun correo');

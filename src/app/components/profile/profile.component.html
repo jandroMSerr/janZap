@@ -24,9 +24,9 @@
                 <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2Fprofile%2Fprofile-picture.webp?alt=media"
                     class="card-img-top rounded-circle" alt="Perfil">
                 <div class="card-body">
-                    <h2 class="card-text profile-name">Alejandro Martínez</h2>
-                    <p class="card-text profile-email">example@janzap.com</p>
-                    <button type="button" class="btn btn-dark mb-2">Cambiar contraseña</button> <br>
+                    <h2 class="card-text profile-name">{{userEmail}}</h2>
+                    <p class="card-text profile-email">{{userEmail}}@gmail.com</p>
+                    <button type="button" (click)="forgotpassword()" class="btn btn-dark mb-2">Cambiar contraseña</button> <br>
                     <button type="button" (click)="logOut()" class="btn btn-dark">Cerrar sesión</button>
                 </div>
             </div>
