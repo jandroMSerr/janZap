@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/shared/services/auth.service';
 import { PlacesService } from 'src/app/shared/services/admin.service';
 import { Place } from 'src/app/shared/interfaces/admin';
 
@@ -16,7 +15,7 @@ export class homeComponent implements OnInit {
 
 
   constructor(
-    private authService: AuthService,
+  
     private placesService: PlacesService
   ) {
 
@@ -55,7 +54,5 @@ export class homeComponent implements OnInit {
     })
   }
 
-  logOut() {
-    this.authService.logOut();
-  }
+  
 }

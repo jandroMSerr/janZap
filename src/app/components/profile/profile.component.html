@@ -16,7 +16,8 @@
 </head>
 
 <body>
-    <div class="container-fluid">
+
+    <div class="container-fluid mt-5">
 
         <div class="container-fluid card-container">
                 <div class="card card-profile text-center">
@@ -26,12 +27,12 @@
                     <h2 class="card-text profile-name">Alejandro Martínez</h2>
                     <p class="card-text profile-email">example@janzap.com</p>
                     <button type="button" class="btn btn-dark mb-2">Cambiar contraseña</button> <br>
-                    <button type="button" class="btn btn-dark">Cerrar sesión</button>
+                    <button type="button" (click)="logOut()" class="btn btn-dark">Cerrar sesión</button>
                 </div>
             </div>
         </div>
     </div>
 </body>
-
+<app-footer></app-footer>
 
 </html>
