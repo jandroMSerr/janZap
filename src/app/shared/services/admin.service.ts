@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData, doc, deleteDoc } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Place, Portada2, Portada3, Portada4, Portada5 } from '../interfaces/admin';
+import { Place,PlaceTop, PlaceTopMujer} from '../interfaces/admin';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Injectable({
@@ -29,13 +29,12 @@ export class PlacesService {
     return collectionData(placeRef, { idField: 'id' }) as Observable<Place[]>;
   }
 
-
   deleteProduct(place: Place) {
     const placeDocRef = doc(this.firestore, `cesta/${place.id}`);
     return deleteDoc(placeDocRef);
   }
 
-  // Fin tienda
+  // Fin tienda  
 
   async trakePicture(promptLabelHeader: string) {
     return await Camera.getPhoto({
@@ -64,70 +63,62 @@ export class PlacesService {
     return deleteDoc(placeDocRef);
   }
 
-  
+   //Tienda  Top
 
-  addPortada2(portada2: Portada2) {
-    const placeRef = collection(this.firestore, 'portada2');
-    return addDoc(placeRef, portada2);
+   async trakePictureTop(promptLabelHeader: string) {
+    return await Camera.getPhoto({
+      quality: 90,
+      allowEditing: true,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Prompt,
+      promptLabelHeader,
+      promptLabelPhoto: 'Selecciona una imagen',
+      promptLabelPicture: 'Toma una foto'
+    });
+  };
+
+  addPlaceTop(PlaceTop: PlaceTop) {
+    const placeRef = collection(this.firestore, 'seleccionTop');
+    return addDoc(placeRef, PlaceTop);
   }
 
-  getPortada2(): Observable<Portada2[]> {
-    const placeRef = collection(this.firestore, 'portada2');
-    return collectionData(placeRef, { idField: 'id' }) as Observable<Portada2[]>;
+   getProductTop(): Observable<PlaceTop[]> {
+    const placeRef = collection(this.firestore, 'seleccionTop');
+    return collectionData(placeRef, { idField: 'id' }) as Observable<PlaceTop[]>;
   }
 
-  deletePlace2(portada2: Portada2) {
-    const placeDocRef = doc(this.firestore, `portada2/${portada2.id}`);
+   deleteProductTop(placeTop: PlaceTop) {
+    const placeDocRef = doc(this.firestore, `seleccionTop/${placeTop.id}`);
     return deleteDoc(placeDocRef);
   }
 
-  // portada3
 
-  addPortada3(portada3: Portada3) {
-    const placeRef = collection(this.firestore, 'portada3');
-    return addDoc(placeRef, portada3);
-  }
+//Tienda  Top Mujer
 
-  getPortada3(): Observable<Portada3[]> {
-    const placeRef = collection(this.firestore, 'portada3');
-    return collectionData(placeRef, { idField: 'id' }) as Observable<Portada3[]>;
-  }
+async trakePictureTopMujer(promptLabelHeader: string) {
+  return await Camera.getPhoto({
+    quality: 90,
+    allowEditing: true,
+    resultType: CameraResultType.DataUrl,
+    source: CameraSource.Prompt,
+    promptLabelHeader,
+    promptLabelPhoto: 'Selecciona una imagen',
+    promptLabelPicture: 'Toma una foto'
+  });
+};
 
-  deletePlace3(portada3: Portada3) {
-    const placeDocRef = doc(this.firestore, `portada3/${portada3.id}`);
-    return deleteDoc(placeDocRef);
-  }
+addPlaceTopMujer(PlaceTopMujer: PlaceTopMujer) {
+  const placeRef = collection(this.firestore, 'seleccionTopMujer');
+  return addDoc(placeRef, PlaceTopMujer);
+}
 
-  // portada4
+ getProductTopMujer(): Observable<PlaceTopMujer[]> {
+  const placeRef = collection(this.firestore, 'seleccionTopMujer');
+  return collectionData(placeRef, { idField: 'id' }) as Observable<PlaceTopMujer[]>;
+}
 
-  addPortada4(portada4: Portada4) {
-    const placeRef = collection(this.firestore, 'portada4');
-    return addDoc(placeRef, portada4);
-  }
-
-  getPortada4(): Observable<Portada4[]> {
-    const placeRef = collection(this.firestore, 'portada4');
-    return collectionData(placeRef, { idField: 'id' }) as Observable<Portada4[]>;
-  }
-
-  deletePlace4(portada4: Portada4) {
-    const placeDocRef = doc(this.firestore, `portada4/${portada4.id}`);
-    return deleteDoc(placeDocRef);
-  }
-  // portada5
-
-  addPortada5(portada5: Portada5) {
-    const placeRef = collection(this.firestore, 'portada5');
-    return addDoc(placeRef, portada5);
-  }
-
-  getPortada5(): Observable<Portada5[]> {
-    const placeRef = collection(this.firestore, 'portada5');
-    return collectionData(placeRef, { idField: 'id' }) as Observable<Portada5[]>;
-  }
-
-  deletePlace5(portada5: Portada5) {
-    const placeDocRef = doc(this.firestore, `portada5/${portada5.id}`);
-    return deleteDoc(placeDocRef);
-  }
+ deleteProductTopMujer(placeTopMujer: PlaceTopMujer) {
+  const placeDocRef = doc(this.firestore, `seleccionTopMujer/${placeTopMujer.id}`);
+  return deleteDoc(placeDocRef);
+}
 }

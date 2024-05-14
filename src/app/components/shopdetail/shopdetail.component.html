@@ -31,7 +31,8 @@
                                         <img class="card-img mt-2" src="{{products.picture}}"
                                             style="width:auto; height: 200px;" alt="Card image cap">
                                         <div class="card-body">
-                                            <p class="product-name">{{products.name}}<p>
+                                            <p class="product-name">{{products.name}}
+                                            <p>
                                             <p class="product-price">{{products.price}}€</p>
 
                                             <div class="progress" role="progressbar"
@@ -45,6 +46,51 @@
                                                     Comentarios : {{products.comments}}</span>
                                             </p>
                                             <p class="product-description">{{products.description}}</p>
+                                            <input *ngIf="products.sizeshoes33" type="checkbox" class="btn-check" id="size33" autocomplete="off" >
+                                            <label *ngIf="products.sizeshoes33" class="btn btn-secondary" for="size33">33</label>
+                                            
+                                            <input *ngIf="products.sizeshoes34" type="checkbox" class="btn-check" id="size34" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes34" class="btn btn-secondary" for="size34">34</label>
+                                            
+                                            <input *ngIf="products.sizeshoes35" type="checkbox" class="btn-check" id="size35" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes35" class="btn btn-secondary" for="size35">35</label>
+                                            
+                                            <input *ngIf="products.sizeshoes36" type="checkbox" class="btn-check" id="size36" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes36" class="btn btn-secondary" for="size36">36</label>
+                                            
+                                            <input *ngIf="products.sizeshoes37" type="checkbox" class="btn-check" id="size37" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes37" class="btn btn-secondary" for="size37">37</label>
+                                            
+                                            <input *ngIf="products.sizeshoes38" type="checkbox" class="btn-check" id="size38" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes38" class="btn btn-secondary" for="size38">38</label>
+                                            
+                                            <input *ngIf="products.sizeshoes39" type="checkbox" class="btn-check" id="size39" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes39" class="btn btn-secondary" for="size39">39</label>
+                                            
+                                            <input *ngIf="products.sizeshoes40" type="checkbox" class="btn-check" id="size40" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes40" class="btn btn-secondary" for="size40">40</label>
+                                            
+                                            <input *ngIf="products.sizeshoes41" type="checkbox" class="btn-check" id="size41" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes41" class="btn btn-secondary" for="size41">41</label>
+                                            
+                                            <input *ngIf="products.sizeshoes42" type="checkbox" class="btn-check" id="size42" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes42" class="btn btn-secondary" for="size42">42</label>
+                                            
+                                            <input *ngIf="products.sizeshoes43" type="checkbox" class="btn-check" id="size43" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes43" class="btn btn-secondary" for="size43">43</label>
+                                            
+                                            <input *ngIf="products.sizeshoes44" type="checkbox" class="btn-check" id="size44" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes44" class="btn btn-secondary" for="size44">44</label>
+                                            
+                                            <input *ngIf="products.sizeshoes45" type="checkbox" class="btn-check" id="size45" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes45" class="btn btn-secondary" for="size45">45</label>
+                                            
+                                            <input *ngIf="products.sizeshoes46" type="checkbox" class="btn-check" id="size46" autocomplete="off">
+                                            <label *ngIf="products.sizeshoes46" class="btn btn-secondary" for="size46">46</label>
+                                            
+
+                                          
+
                                             <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-4">
                                                 <button class="btn btn-dark" (click)="anadirCesta(products)">Añadir a
                                                     la cesta</button>
@@ -64,4 +110,5 @@
     </div>
 </body>
 <app-footer></app-footer>
+
 </html>

@@ -37,44 +37,87 @@
               <label class="form-label">Precio</label>
               <input type="text" class="form-control" formControlName="price">
             </div>
-            <div class="form-group col-sm-3 mt-3">
+            <div class="form-group col-sm-4 mt-3">
               <label class="form-label">Media comentarios</label>
               <input type="text" class="form-control" formControlName="rating">
             </div>
-            <div class="form-group col-sm-3 mt-3">
+            <div class="form-group col-sm-4 mt-3">
               <label class="form-label">Numero de comentarios</label>
               <input type="text" class="form-control" formControlName="comments">
             </div>
-            <div class="form-group col-sm-3 mt-3">
+            <div class="form-group col-sm-4 mt-3">
               <label class="form-label">Color</label>
               <input type="text" class="form-control" formControlName="color">
             </div>
-            <div class="form-group col-sm-3 mt-3">
-              <label class="form-label">Tamaño</label>
-              
+            <div class="form-group col-sm-12 mt-3">
+              <label class="form-label">Tamaño Zapatillas</label>
+              <div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes33" type="checkbox" id="33" value="33">
+                  <label class="form-check-label" for="33">33</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes34" type="checkbox" id="34" value="34">
+                  <label class="form-check-label" for="34">34</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes35" type="checkbox" id="35" value="35">
+                  <label class="form-check-label" for="35">35</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes36" type="checkbox" id="36" value="36">
+                  <label class="form-check-label" for="36">36</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes37" type="checkbox" id="37" value="37">
+                  <label class="form-check-label" for="37">37</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes38" type="checkbox" id="38" value="38">
+                  <label class="form-check-label" for="38">38</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes39" type="checkbox" id="39" value="39">
+                  <label class="form-check-label" for="39">39</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes40" type="checkbox" id="40" value="40">
+                  <label class="form-check-label" for="40">40</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes41" type="checkbox" id="41" value="41">
+                  <label class="form-check-label" for="41">41</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes42" type="checkbox" id="42" value="42">
+                  <label class="form-check-label" for="42">42</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes43" type="checkbox" id="43" value="43">
+                  <label class="form-check-label" for="43">43</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes44" type="checkbox" id="44" value="44">
+                  <label class="form-check-label" for="44">44</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes45" type="checkbox" id="45" value="45">
+                  <label class="form-check-label" for="45">45</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes46" type="checkbox" id="46" value="46">
+                  <label class="form-check-label" for="46">46</label>
+                </div>
+              </div>
             </div>
-
-
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-              <label class="form-check-label" for="inlineCheckbox1">1</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-              <label class="form-check-label" for="inlineCheckbox2">2</label>
-            </div>
-            <div class="form-check form-check-inline">
-              <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
-              <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
-            </div>
-
-
-
 
             <div class="form-group col-sm-12 mt-5">
               <img [src]="formulario.value.picture" style="display:block;
               margin:auto; width: 276px;" />
-              <button type="text" class="form-control" formControlName="picture" (click)="trakePicture()">Foto Producto</button>
+              <button type="text" class="form-control" formControlName="picture" (click)="trakePicture()">Foto
+                Producto</button>
             </div>
 
 
@@ -106,28 +149,153 @@
     </div>
   </section>
 
-  <div class="row mt-5">
-    <div class="form-group col-sm-12">
-      <label class="form-label">Foto Producto</label>
-      <input type="file" class="form-control" (change)="uploadImage($event)">
+
+
+  <section class="payment-form ">
+
+    <div class="container">
+      <div class="card-details">
+        <h3 class="title">Carousel Home</h3>
+          <div class="row">
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel1%2Fportada1.jpg?alt=media" style="width: 253px;">
+              <label class="form-label">Foto Carousel 1 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel($event)">
+            </div>
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel1%2Fportada2.jpg?alt=media" style="width: 253px;">
+              <label class="form-label">Foto Carousel 2 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel2($event)">
+            </div>
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel1%2Fportada3.jpg?alt=media" style="width: 253px;">
+              <label class="form-label">Foto Carousel 3 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel3($event)">
+            </div>
+          </div>
+      </div>
+
+
     </div>
-  </div>
+  </section>
+
+
+
+
 
   <section class="payment-form ">
     <div class="container">
+
       <div class="card-details">
-        <h3 class="title">Texto Portada 2</h3>
-        <form [formGroup]="formularioPortada2" (ngSubmit)="onSubmitPortada2()">
+        <h3 class="title">Selección Top Hombre</h3>
+        <form [formGroup]="formularioTop" (ngSubmit)="onSubmitTop()">
           <div class="row">
 
             <div class="form-group col-sm-5">
               <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" formControlName="name">
+              <input type="text" class="form-control" formControlName="nameTop">
             </div>
-            <div class="form-group col-sm-7">
-              <label class="form-label">Description</label>
-              <input type="text" class="form-control" formControlName="description">
+
+            <div class="form-group col-sm-3">
+              <label class="form-label">Precio</label>
+              <input type="text" class="form-control" formControlName="priceTop">
             </div>
+            <div class="form-group col-sm-4"></div>
+            <div class="form-group col-sm-4 mt-3">
+              <label class="form-label">Media comentarios</label>
+              <input type="text" class="form-control" formControlName="ratingTop">
+            </div>
+            <div class="form-group col-sm-4 mt-3">
+              <label class="form-label">Numero de comentarios</label>
+              <input type="text" class="form-control" formControlName="commentsTop">
+            </div>
+
+            <div class="form-group col-sm-12 mt-3">
+              <label class="form-label">Tamaño Zapatillas</label>
+              <div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes33Top" type="checkbox" id="33Top"
+                    value="33">
+                  <label class="form-check-label" for="33">33</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes34Top" type="checkbox" id="34Top"
+                    value="34">
+                  <label class="form-check-label" for="34">34</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes35Top" type="checkbox" id="35Top"
+                    value="35">
+                  <label class="form-check-label" for="35">35</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes36Top" type="checkbox" id="36Top"
+                    value="36">
+                  <label class="form-check-label" for="36">36</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes37Top" type="checkbox" id="37Top"
+                    value="37">
+                  <label class="form-check-label" for="37">37</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes38Top" type="checkbox" id="38Top"
+                    value="38">
+                  <label class="form-check-label" for="38">38</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes39Top" type="checkbox" id="39Top"
+                    value="39">
+                  <label class="form-check-label" for="39">39</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes40Top" type="checkbox" id="40Top"
+                    value="40">
+                  <label class="form-check-label" for="40">40</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes41Top" type="checkbox" id="41Top"
+                    value="41">
+                  <label class="form-check-label" for="41">41</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes42Top" type="checkbox" id="42Top"
+                    value="42">
+                  <label class="form-check-label" for="42">42</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes43Top" type="checkbox" id="43Top"
+                    value="43">
+                  <label class="form-check-label" for="43">43</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes44Top" type="checkbox" id="44Top"
+                    value="44">
+                  <label class="form-check-label" for="44">44</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes45Top" type="checkbox" id="45Top"
+                    value="45">
+                  <label class="form-check-label" for="45">45</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes46Top" type="checkbox" id="46Top"
+                    value="46">
+                  <label class="form-check-label" for="46">46</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-12 mt-5">
+              <img [src]="formularioTop.value.pictureTop" style="display:block;
+              margin:auto; width: 276px;" />
+              <button type="text" class="form-control" formControlName="pictureTop" (click)="trakePictureTop()">Foto
+                Producto</button>
+            </div>
+
+
             <div class="mt-3"></div>
             <div class="form-group col-sm-12">
               <input type="submit" value="Enviar" class="btn btn-info">
@@ -135,17 +303,19 @@
 
           </div>
         </form>
+
         <div class="mt-3"></div>
 
       </div>
       <div class="products">
         <h3 class="title">Previsualizador</h3>
-        <div class="place" *ngFor="let portada of portada2">
+        <div class="place" *ngFor="let places of placesTop">
           <div class="form-group col-sm-12">
             <div class="input-group">
-              <button class="btn btn-outline-danger" (click)="onClickDeletePortada2(portada)">Borrar</button>
-              <label class="form-control">{{portada.name}}</label>
-              <label class="form-control">{{portada.description}}</label>
+              <button class="btn btn-outline-danger" (click)="onClickDeleteTop(places)">Borrar</button>
+              <img [src]="places.pictureTop" style="width: 253px;">
+              <label class="form-control">{{places.nameTop}}</label>
+              <label class="form-control">{{places.priceTop}}</label>
             </div>
           </div>
         </div>
@@ -153,21 +323,121 @@
     </div>
   </section>
 
+
+
   <section class="payment-form ">
     <div class="container">
+
       <div class="card-details">
-        <h3 class="title">Texto Portada 3</h3>
-        <form [formGroup]="formularioPortada3" (ngSubmit)="onSubmitPortada3()">
+        <h3 class="title">Selección Top Mujer</h3>
+        <form [formGroup]="formularioTopMujer" (ngSubmit)="onSubmitTopMujer()">
           <div class="row">
 
             <div class="form-group col-sm-5">
               <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" formControlName="name">
+              <input type="text" class="form-control" formControlName="nameTopMujer">
             </div>
-            <div class="form-group col-sm-7">
-              <label class="form-label">Description</label>
-              <input type="text" class="form-control" formControlName="description">
+
+            <div class="form-group col-sm-3">
+              <label class="form-label">Precio</label>
+              <input type="text" class="form-control" formControlName="priceTopMujer">
             </div>
+            <div class="form-group col-sm-4"></div>
+            <div class="form-group col-sm-4 mt-3">
+              <label class="form-label">Media comentarios</label>
+              <input type="text" class="form-control" formControlName="ratingTopMujer">
+            </div>
+            <div class="form-group col-sm-4 mt-3">
+              <label class="form-label">Numero de comentarios</label>
+              <input type="text" class="form-control" formControlName="commentsTopMujer">
+            </div>
+
+            <div class="form-group col-sm-12 mt-3">
+              <label class="form-label">Tamaño Zapatillas</label>
+              <div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes33TopMujer" type="checkbox" id="33TopMujer"
+                    value="33">
+                  <label class="form-check-label" for="33">33</label>
+                </div>
+
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes34TopMujer" type="checkbox" id="34TopMujer"
+                    value="34">
+                  <label class="form-check-label" for="34">34</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes35TopMujer" type="checkbox" id="35TopMujer"
+                    value="35">
+                  <label class="form-check-label" for="35">35</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes36TopMujer" type="checkbox" id="36TopMujer"
+                    value="36">
+                  <label class="form-check-label" for="36">36</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes37TopMujer" type="checkbox" id="37TopMujer"
+                    value="37">
+                  <label class="form-check-label" for="37">37</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes38TopMujer" type="checkbox" id="38TopMujer"
+                    value="38">
+                  <label class="form-check-label" for="38">38</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes39TopMujer" type="checkbox" id="39TopMujer"
+                    value="39">
+                  <label class="form-check-label" for="39">39</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes40TopMujer" type="checkbox" id="40TopMujer"
+                    value="40">
+                  <label class="form-check-label" for="40">40</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes41TopMujer" type="checkbox" id="41TopMujer"
+                    value="41">
+                  <label class="form-check-label" for="41">41</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes42TopMujer" type="checkbox" id="42TopMujer"
+                    value="42">
+                  <label class="form-check-label" for="42">42</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes43TopMujer" type="checkbox" id="43TopMujer"
+                    value="43">
+                  <label class="form-check-label" for="43">43</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes44TopMujer" type="checkbox" id="44TopMujer"
+                    value="44">
+                  <label class="form-check-label" for="44">44</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes45TopMujer" type="checkbox" id="45TopMujer"
+                    value="45">
+                  <label class="form-check-label" for="45">45</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" formControlName="sizeshoes46TopMujer" type="checkbox" id="46TopMujer"
+                    value="46">
+                  <label class="form-check-label" for="46">46</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group col-sm-12 mt-5">
+              <img [src]="formularioTopMujer.value.pictureTopMujer" style="display:block;
+              margin:auto; width: 276px;" />
+              <button type="text" class="form-control" formControlName="pictureTopMujer" (click)="trakePictureTopMujer()">Foto
+                Producto</button>
+            </div>
+
+
             <div class="mt-3"></div>
             <div class="form-group col-sm-12">
               <input type="submit" value="Enviar" class="btn btn-info">
@@ -175,103 +445,72 @@
 
           </div>
         </form>
+
         <div class="mt-3"></div>
 
       </div>
       <div class="products">
         <h3 class="title">Previsualizador</h3>
-        <div class="place" *ngFor="let portada of portada3">
+        <div class="place" *ngFor="let places of placesTopMujer">
           <div class="form-group col-sm-12">
             <div class="input-group">
-              <button class="btn btn-outline-danger" (click)="onClickDeletePortada3(portada)">Borrar</button>
-              <label class="form-control">{{portada.name}}</label>
-              <label class="form-control">{{portada.description}}</label>
+              <button class="btn btn-outline-danger" (click)="onClickDeleteTopMujer(places)">Borrar</button>
+              <img [src]="places.pictureTopMujer" style="width: 253px;">
+              <label class="form-control">{{places.nameTopMujer}}</label>
+              <label class="form-control">{{places.priceTopMujer}}</label>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <section class="payment-form ">
+
     <div class="container">
       <div class="card-details">
-        <h3 class="title">Texto Portada 4</h3>
-        <form [formGroup]="formularioPortada4" (ngSubmit)="onSubmitPortada4()">
+        <h3 class="title">Carousel 2  Home</h3>
           <div class="row">
-
-            <div class="form-group col-sm-5">
-              <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" formControlName="name">
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada1.jpg?alt=media" style="width: 253px;">
+              <label class="form-label mt-2">Foto Carousel 1 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel4($event)">
             </div>
-            <div class="form-group col-sm-7">
-              <label class="form-label">Description</label>
-              <input type="text" class="form-control" formControlName="description">
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada2.jpg?alt=media" style="width: 253px;">
+              <label class="form-label mt-2">Foto Carousel 2 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel5($event)">
             </div>
-            <div class="mt-3"></div>
-            <div class="form-group col-sm-12">
-              <input type="submit" value="Enviar" class="btn btn-info">
-            </div>
-
-          </div>
-        </form>
-        <div class="mt-3"></div>
-
-      </div>
-      <div class="products">
-        <h3 class="title">Previsualizador</h3>
-        <div class="place" *ngFor="let portada of portada4">
-          <div class="form-group col-sm-12">
-            <div class="input-group">
-              <button class="btn btn-outline-danger" (click)="onClickDeletePortada4(portada)">Borrar</button>
-              <label class="form-control">{{portada.name}}</label>
-              <label class="form-control">{{portada.description}}</label>
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada3.gif?alt=media" style="width: 253px;">
+              <label class="form-label mt-2">Foto Carousel 3 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel6($event)">
             </div>
           </div>
-        </div>
+          <div class="row mt-5">
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada4.jpg?alt=media" style="width: 253px;">
+              <label class="form-label mt-2">Foto Carousel 4 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel7($event)">
+            </div>
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada5.jpg?alt=media" style="width: 253px;">
+              <label class="form-label mt-2">Foto Carousel 5 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel8($event)">
+            </div>
+            <div class="form-group col-sm-4">
+              <img src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada6.jpg?alt=media" style="width: 253px;">
+              <label class="form-label mt-2">Foto Carousel 6 </label>
+              <input type="file" class="form-control" (change)="uploadImageCarousel9($event)">
+            </div>
+          </div>
       </div>
+
+
     </div>
   </section>
 
-  <section class="payment-form ">
-    <div class="container">
-      <div class="card-details">
-        <h3 class="title">Texto Portada 5</h3>
-        <form [formGroup]="formularioPortada5" (ngSubmit)="onSubmitPortada5()">
-          <div class="row">
-
-            <div class="form-group col-sm-5">
-              <label class="form-label">Nombre</label>
-              <input type="text" class="form-control" formControlName="name">
-            </div>
-            <div class="form-group col-sm-7">
-              <label class="form-label">Description</label>
-              <input type="text" class="form-control" formControlName="description">
-            </div>
-            <div class="mt-3"></div>
-            <div class="form-group col-sm-12">
-              <input type="submit" value="Enviar" class="btn btn-info">
-            </div>
-
-          </div>
-        </form>
-        <div class="mt-3"></div>
-
-      </div>
-      <div class="products">
-        <h3 class="title">Previsualizador</h3>
-        <div class="place" *ngFor="let portada of portada5">
-          <div class="form-group col-sm-12">
-            <div class="input-group">
-              <button class="btn btn-outline-danger" (click)="onClickDeletePortada5(portada)">Borrar</button>
-              <label class="form-control">{{portada.name}}</label>
-              <label class="form-control">{{portada.description}}</label>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </body>
 
 </html>

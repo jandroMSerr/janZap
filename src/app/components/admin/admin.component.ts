@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Place, Portada2, Portada3, Portada4, Portada5 } from 'src/app/shared/interfaces/admin';
+import { Place, PlaceTop,PlaceTopMujer, } from 'src/app/shared/interfaces/admin';
 import { PlacesService } from 'src/app/shared/services/admin.service';
 import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fire/storage';
 
@@ -11,17 +11,16 @@ import { Storage, ref, uploadBytes, listAll, getDownloadURL } from '@angular/fir
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent {
-  formulario: FormGroup; formularioPortada2: FormGroup; formularioPortada3: FormGroup;
-  formularioPortada4: FormGroup; formularioPortada5: FormGroup;
-
+  formulario: FormGroup; formularioTop: FormGroup; formularioTopMujer: FormGroup; 
   images: string[];
 
-  places: Place[]; portada2: Portada2[]; portada3: Portada3[]; portada4: Portada4[]; portada5: Portada5[];
+  places: Place[]; placesTop: PlaceTop[];placesTopMujer: PlaceTopMujer[];;
 
   constructor(
     private placesService: PlacesService, private storage: Storage
   ) {
     this.images = [];
+
     this.formulario = new FormGroup({
       id: new FormControl(),
       name: new FormControl(),
@@ -31,80 +30,92 @@ export class AdminComponent {
       rating: new FormControl(),
       comments: new FormControl(),
       color: new FormControl(),
-      size: new FormControl(),
-    }),
+      sizeshoes33: new FormControl(),
+      sizeshoes34: new FormControl(),
+      sizeshoes35: new FormControl(),
+      sizeshoes36: new FormControl(),
+      sizeshoes37: new FormControl(),
+      sizeshoes38: new FormControl(),
+      sizeshoes39: new FormControl(),
+      sizeshoes40: new FormControl(),
+      sizeshoes41: new FormControl(),
+      sizeshoes42: new FormControl(),
+      sizeshoes43: new FormControl(),
+      sizeshoes45: new FormControl(),
+      sizeshoes46: new FormControl(),
+      sizeshoes47: new FormControl(),
 
-      this.formularioPortada2 = new FormGroup({
-        id: new FormControl(),
-        name: new FormControl(),
-        description: new FormControl()
-      }),
+    });
 
-      this.formularioPortada3 = new FormGroup({
-        id: new FormControl(),
-        name: new FormControl(),
-        description: new FormControl()
-      }),
-      this.formularioPortada4 = new FormGroup({
-        id: new FormControl(),
-        name: new FormControl(),
-        description: new FormControl()
-      }),
-      this.formularioPortada5 = new FormGroup({
-        id: new FormControl(),
-        name: new FormControl(),
-        description: new FormControl()
-      }),
+    this.formularioTop = new FormGroup({
+      idTop: new FormControl(),
+      nameTop: new FormControl(),
+      descriptionTop: new FormControl(),
+      priceTop: new FormControl(),
+      pictureTop: new FormControl(),
+      ratingTop: new FormControl(),
+      commentsTop: new FormControl(),
+      colorTop: new FormControl(),
+      sizeshoes33Top: new FormControl(),
+      sizeshoes34Top: new FormControl(),
+      sizeshoes35Top: new FormControl(),
+      sizeshoes36Top: new FormControl(),
+      sizeshoes37Top: new FormControl(),
+      sizeshoes38Top: new FormControl(),
+      sizeshoes39Top: new FormControl(),
+      sizeshoes40Top: new FormControl(),
+      sizeshoes41Top: new FormControl(),
+      sizeshoes42Top: new FormControl(),
+      sizeshoes43Top: new FormControl(),
+      sizeshoes45Top: new FormControl(),
+      sizeshoes46Top: new FormControl(),
+      sizeshoes47Top: new FormControl(),
 
+    });
 
-      this.places = [{
-        id: '',
-        name: '',
-        description: '',
-        price: 0,
-        picture: '',
-        rating: 0,
-        comments: '',
-        color: '',
-        size: '',
-      }];
-    this.portada2 = [{
-      id: '',
-      name: '',
-      description: '',
-    }];
-    this.portada3 = [{
-      id: '',
-      name: '',
-      description: '',
-    }];
-    this.portada4 = [{
-      id: '',
-      name: '',
-      description: '',
-    }];
-    this.portada5 = [{
-      id: '',
-      name: '',
-      description: '',
-    }];
+    this.formularioTopMujer = new FormGroup({
+      idTopMujer: new FormControl(),
+      nameTopMujer: new FormControl(),
+      descriptionTopMujer: new FormControl(),
+      priceTopMujer: new FormControl(),
+      pictureTopMujer: new FormControl(),
+      ratingTopMujer: new FormControl(),
+      commentsTopMujer: new FormControl(),
+      colorTopMujer: new FormControl(),
+      sizeshoes33TopMujer: new FormControl(),
+      sizeshoes34TopMujer: new FormControl(),
+      sizeshoes35TopMujer: new FormControl(),
+      sizeshoes36TopMujer: new FormControl(),
+      sizeshoes37TopMujer: new FormControl(),
+      sizeshoes38TopMujer: new FormControl(),
+      sizeshoes39TopMujer: new FormControl(),
+      sizeshoes40TopMujer: new FormControl(),
+      sizeshoes41TopMujer: new FormControl(),
+      sizeshoes42TopMujer: new FormControl(),
+      sizeshoes43TopMujer: new FormControl(),
+      sizeshoes45TopMujer: new FormControl(),
+      sizeshoes46TopMujer: new FormControl(),
+      sizeshoes47TopMujer: new FormControl(),
+
+    });
+
+    this.places = [];
+    this.placesTop = [];
+    this.placesTopMujer = [];
+
   }
 
   ngOnInit(): void {
     this.placesService.getPlaces().subscribe(places => {
       this.places = places;
     })
-    this.placesService.getPortada2().subscribe(portada2 => {
-      this.portada2 = portada2;
+
+    this.placesService.getProductTop().subscribe(placestop => {
+      this.placesTop = placestop;
     })
-    this.placesService.getPortada3().subscribe(portada3 => {
-      this.portada3 = portada3;
-    })
-    this.placesService.getPortada4().subscribe(portada4 => {
-      this.portada4 = portada4;
-    })
-    this.placesService.getPortada5().subscribe(portada5 => {
-      this.portada5 = portada5;
+
+    this.placesService.getProductTopMujer().subscribe(placestopMujer => {
+      this.placesTopMujer = placestopMujer;
     })
   }
 
@@ -131,11 +142,11 @@ export class AdminComponent {
       alert('Faltan campos por completar')
     }
   }
-  uploadImage($event: any) {
+  uploadImageCarousel($event: any) {
     const file = $event.target.files[0];
     console.log(file);
 
-    const imgRef = ref(this.storage, `images/${file.name}`);
+    const imgRef = ref(this.storage, `images/Home/carousel1/${file.name}`);
 
     uploadBytes(imgRef, file)
       .then(response => {
@@ -146,6 +157,145 @@ export class AdminComponent {
       .catch(error => console.log(error));
 
   }
+  uploadImageCarousel2($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel1/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  uploadImageCarousel3($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel1/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  // carousel2 
+  uploadImageCarousel4($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel2/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  uploadImageCarousel5($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel2/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  uploadImageCarousel6($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel2/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  uploadImageCarousel7($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel2/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  uploadImageCarousel8($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel2/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  uploadImageCarousel9($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel2/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+  uploadImageCarousel10($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `images/Home/carousel2/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
+  }
+
+
+  
   getImages() {
     const imagesRef = ref(this.storage, 'images');
 
@@ -162,46 +312,119 @@ export class AdminComponent {
   }
 
 
-  // portada 2
-  async onClickDeletePortada2(portada2: Portada2) {
-    const response = await this.placesService.deletePlace2(portada2);
+  // Selección Top
+
+  async trakePictureTop() {
+    const dataUrl = (await this.placesService.trakePictureTop('Imagen del Producto')).dataUrl;
+    this.formularioTop.controls['pictureTop'].setValue(dataUrl)
+  }
+
+  async onClickDeleteTop(placesTop: PlaceTop) {
+    const response = await this.placesService.deleteProductTop(placesTop);
     console.log(response);
   }
-  async onSubmitPortada2() {
-    console.log(this.formularioPortada2.value)
-    const response = await this.placesService.addPortada2(this.formularioPortada2.value);
-    console.log(response);
+  clearTop() {
+    this.formularioTop.reset();
   }
-  // portada 3
-  async onClickDeletePortada3(portada3: Portada3) {
-    const response = await this.placesService.deletePlace3(portada3);
-    console.log(response);
+  async onSubmitTop() {
+    console.log(this.formularioTop.value)
+    if (this.formularioTop.value.nameTop && this.formularioTop.value.pictureTop && this.formularioTop.value.priceTop && this.formularioTop.value.ratingTop && this.formularioTop.value.commentsTop) {
+      const response = await this.placesService.addPlaceTop(this.formularioTop.value);
+      console.log(response);
+      this.clearTop();
+    }
+    else {
+      alert('Faltan campos por completar')
+    }
   }
-  async onSubmitPortada3() {
-    console.log(this.formularioPortada3.value)
-    const response = await this.placesService.addPortada3(this.formularioPortada3.value);
-    console.log(response);
+  uploadImageTop($event: any) {
+    const file = $event.target.files[0];
+    console.log(file);
+
+    const imgRef = ref(this.storage, `imagesTop/${file.name}`);
+
+    uploadBytes(imgRef, file)
+      .then(response => {
+        console.log(response)
+        this.getImages();
+        alert("Subido correctamente");
+      })
+      .catch(error => console.log(error));
+
   }
-  // portada 4
-  async onClickDeletePortada4(portada4: Portada4) {
-    const response = await this.placesService.deletePlace4(portada4);
-    console.log(response);
-  }
-  async onSubmitPortada4() {
-    console.log(this.formularioPortada4.value)
-    const response = await this.placesService.addPortada4(this.formularioPortada4.value);
-    console.log(response);
-  }
-  // portada 5
-  async onClickDeletePortada5(portada5: Portada5) {
-    const response = await this.placesService.deletePlace5(portada5);
-    console.log(response);
-  }
-  async onSubmitPortada5() {
-    console.log(this.formularioPortada5.value)
-    const response = await this.placesService.addPortada5(this.formularioPortada5.value);
-    console.log(response);
+  getImagesTop() {
+    const imagesRef = ref(this.storage, 'imagesTop');
+
+    listAll(imagesRef)
+      .then(async response => {
+        console.log(response);
+        this.images = [];
+        for (let item of response.items) {
+          const url = await getDownloadURL(item);
+          this.images.push(url);
+        }
+      })
+      .catch(error => console.log(error));
   }
 
 
+  // Selección Top Final
+
+// Selección Top Mujer
+
+
+async trakePictureTopMujer() {
+  const dataUrl = (await this.placesService.trakePictureTopMujer('Imagen del Producto')).dataUrl;
+  this.formularioTopMujer.controls['pictureTopMujer'].setValue(dataUrl)
+}
+
+async onClickDeleteTopMujer(placesTopMujer: PlaceTopMujer) {
+  const response = await this.placesService.deleteProductTopMujer(placesTopMujer);
+  console.log(response);
+}
+clearTopMujer() {
+  this.formularioTopMujer.reset();
+}
+async onSubmitTopMujer() {
+  console.log(this.formularioTopMujer.value)
+  if (this.formularioTopMujer.value.nameTopMujer && this.formularioTopMujer.value.pictureTopMujer && this.formularioTopMujer.value.priceTopMujer && this.formularioTopMujer.value.ratingTopMujer && this.formularioTopMujer.value.commentsTopMujer) {
+    const response = await this.placesService.addPlaceTopMujer(this.formularioTopMujer.value);
+    console.log(response);
+    this.clearTopMujer();
+  }
+  else {
+    alert('Faltan campos por completar')
+  }
+}
+uploadImageTopMujer($event: any) {
+  const file = $event.target.files[0];
+  console.log(file);
+
+  const imgRef = ref(this.storage, `imagesTopMujer/${file.name}`);
+
+  uploadBytes(imgRef, file)
+    .then(response => {
+      console.log(response)
+      this.getImages();
+      alert("Subido correctamente");
+    })
+    .catch(error => console.log(error));
+
+}
+getImagesTopMujer() {
+  const imagesRef = ref(this.storage, 'imagesTopMujer');
+
+  listAll(imagesRef)
+    .then(async response => {
+      console.log(response);
+      this.images = [];
+      for (let item of response.items) {
+        const url = await getDownloadURL(item);
+        this.images.push(url);
+      }
+    })
+    .catch(error => console.log(error));
+}
+
+//// Final Top mujer
 }

@@ -16,18 +16,7 @@ export class SmallcardComponent {
   constructor(private placesService: PlacesService,) {
 
     {
-      this.places = [{
-        id: '',
-        name: '',
-        description: '',
-        price: 0,
-        picture: '',
-        rating: 0,
-        comments: '',
-        color: '',
-        size: '',
-
-      }];
+      this.places = [];
 
     }
   }

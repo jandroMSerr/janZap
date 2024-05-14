@@ -37,7 +37,7 @@
                         <div class="col">
                             <div class="row text-muted">
                                 <p>{{ product.name }}</p>
-                                <p>Talla : {{product.size}}</p>
+                                
                             </div>
                             
                         </div>
@@ -128,7 +128,6 @@
                                         <option value="AM">Armenia</option>
                                         <option value="AT">Austria</option>
                                         <option value="AZ">Azerbaiyán</option>
-                                        <!-- Agrega todas las opciones de países/regiones que necesites -->
                                     </select>
                                     <div *ngIf="shippingForm.get('country') !== null && shippingForm.get('country')!.invalid && (shippingForm.get('country')!.touched || shippingForm.get('country')!.dirty)"
                                         class="error-message">
@@ -155,7 +154,7 @@
                                         <option value="valencia">Valencia</option>
                                         <option value="alicante">Alicante</option>
                                         <option value="castellon">Castellón</option>
-                                        <!-- Agrega todas las opciones de provincias que necesites -->
+                                      
                                     </select>
                                     <div *ngIf="shippingForm.get('state') !== null && shippingForm.get('state')!.invalid && (shippingForm.get('state')!.touched || shippingForm.get('state')!.dirty)"
                                         class="error-message">
@@ -173,7 +172,7 @@
                                     class="error-message">
                                     <small *ngIf="shippingForm.get('city')!.errors?.['required']">La población es
                                         obligatoria.</small>
-                                    <!-- Agrega más mensajes de validación si es necesario -->
+                                   
                                 </div>
                             </div>
 

@@ -24,7 +24,21 @@ export class ShopdetailComponent implements OnInit {
       rating: 0,
       comments: '',
       color: '',
-      size: '',
+      sizeshoes33: '',
+      sizeshoes34: '',
+      sizeshoes35: '',
+      sizeshoes36: '',
+      sizeshoes37: '',
+      sizeshoes38: '',
+      sizeshoes39: '',
+      sizeshoes40: '',
+      sizeshoes41: '',
+      sizeshoes42: '',
+      sizeshoes43: '',
+      sizeshoes44: '',
+      sizeshoes45: '',
+      sizeshoes46: '',
+      sizeshoes47: '',
 
     }];
 
@@ -34,9 +48,12 @@ export class ShopdetailComponent implements OnInit {
       this.places = places;
     })
   }
+  
+  
   anadirCesta(products:Place){
 
     this.placesService.addNewProduct(products);
+      
   }
 
 }
