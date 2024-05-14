@@ -78,3 +78,10 @@ export interface PlaceTopMujer {
     sizeshoes47TopMujer: string,    
 
 }
+
+export interface PlaceUser {
+    id?: string;
+    name: string;
+    email: string;
+    password: string;
+}

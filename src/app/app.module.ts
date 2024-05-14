@@ -27,6 +27,7 @@ import { SmallcardComponent } from './components/smallcard/smallcard.component';
 import { CartButtonComponent } from './components/cart-button/cart-button.component';
 import { PurchasesummaryComponent } from './components/purchasesummary/purchasesummary.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { UserService } from './shared/services/user.service';
 
 defineCustomElements(window);
 
@@ -65,7 +66,9 @@ defineCustomElements(window);
     // error solution NullInjectError
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

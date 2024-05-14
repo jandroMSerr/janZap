@@ -15,19 +15,19 @@ import { PurchasesummaryComponent } from './components/purchasesummary/purchases
 import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },  // Añadido pathMatch: 'full'
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: 'forgotpassword', component: ForgotpasswordComponent },
-  { path: 'admin', component: AdminComponent },
+  { path: 'admin', component: AdminComponent , canActivate: [AuthGuard]},
   { path: 'shipping', component: ShippingComponent },
   { path: 'returns', component: ReturnsComponent },
   { path: 'questions', component: QuestionsComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'shop', component: ShopdetailComponent },
   { path: 'purchasesummary', component: PurchasesummaryComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'home', component: homeComponent, canActivate: [AuthGuard] }
+  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
+  { path: 'home', component: homeComponent } 
 ];
 
 @NgModule({

@@ -21,32 +21,57 @@
             <div class="row">
               <div class="col-md-7 pe-0">
                 <div class="form-left h-100 py-5 px-5">
-                  <div class="row g-4">
-                    <div class="col-12">
-                      <label>Usuario<span class="text-danger">*</span></label>
-                      <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
-                        <input type="email" name="email" id="email" #email class="form-control"
-                          placeholder="example@janZap.es">
+                  <form [formGroup]="formularioUser" (ngSubmit)="onSubmit()">
+                    <div class="row g-4">
+                      <div class="col-12">
+                        <label>Nombre<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                          <input type="text" name="name" id="name" formControlName="name" class="form-control" placeholder="Nombre">
+                        </div>
+                        <div *ngIf="formularioUser.get('name') && formularioUser.get('name')!.invalid && (formularioUser.get('name')!.touched || formularioUser.get('name')!.dirty)" class="error-message">
+                          <small *ngIf="formularioUser.get('name')!.errors?.['required']">El nombre es obligatorio.</small>
+                          <small *ngIf="formularioUser.get('name')!.errors?.['minlength']">El nombre debe tener al menos 2 caracteres.</small>
+                          <small *ngIf="formularioUser.get('name')!.errors?.['maxlength']">El nombre debe tener como máximo 50 caracteres.</small>
+                        </div>
+                      </div>
+                      
+                      <div class="col-12">
+                        <label>Usuario<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-text"><i class="bi bi-person-fill"></i></div>
+                          <input type="email" name="email" id="email" formControlName="email" #email class="form-control"
+                            placeholder="example@janZap.es">
+                        </div>
+                        <div *ngIf="formularioUser.get('email') && formularioUser.get('email')!.invalid && (formularioUser.get('email')!.touched || formularioUser.get('email')!.dirty)" class="error-message">
+                          <small *ngIf="formularioUser.get('email')!.errors?.['required']">El email es obligatorio.</small>
+                          <small *ngIf="formularioUser.get('email')!.errors?.['pattern']">Introduce un email válido.</small>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <label>Contraseña<span class="text-danger">*</span></label>
+                        <div class="input-group">
+                          <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                          <input type="password" name="password" id="password" formControlName="password" #password class="form-control"
+                            placeholder="************">
+                          </div>
+                        <div *ngIf="formularioUser.get('password') && formularioUser.get('password')!.invalid && (formularioUser.get('password')!.touched || formularioUser.get('password')!.dirty)" class="error-message">
+                          <small *ngIf="formularioUser.get('password')!.errors?.['required']">La contraseña es obligatorio.</small>
+                          <small *ngIf="formularioUser.get('password')!.errors?.['minlength']">La contraseña debe tener al menos 6 caracteres.</small>
+                          <small *ngIf="formularioUser.get('password')!.errors?.['maxlength']">La contraseña debe tener como máximo 50 caracteres.</small>
+                        </div>
+                      </div>
+
+                      <div class="col-12">
+                        <button type="submit"
+                          class="btn px-4 float-end mt-4">
+                          <p class="recovery-password-text">Registrarse</p>
+                        </button>
+                        <button  (click)="navigateToLogin()" class="btn btn-dark px-4 float-end mt-4">Volver</button>
                       </div>
                     </div>
-
-                    <div class="col-12">
-                      <label>Contraseña<span class="text-danger">*</span></label>
-                      <div class="input-group">
-                        <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
-                        <input type="password" name="password" id="password" #password class="form-control"
-                          placeholder="************">
-                      </div>
-                    </div>
-
-                    <div class="col-12">
-                      <button type="submit" (click)="signUp(email.value, password.value)"
-                        class="btn px-4 float-end mt-4"><p class="recovery-password-text">Registrarse</p></button>
-                         <button (click)="navigateToLogin()"
-                      class="btn btn-dark px-4 float-end mt-4">Volver</button>
-                    </div> 
-                  </div>
+                  </form>
                 </div>
               </div>
               <div class="col-md-5 ps-0 d-none d-md-block">

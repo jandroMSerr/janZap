@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, collectionData, doc, deleteDoc } from '@angular/fire/firestore';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Place,PlaceTop, PlaceTopMujer} from '../interfaces/admin';
+import { Place,PlaceTop, PlaceTopMujer,PlaceUser} from '../interfaces/admin';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
 
 @Injectable({
@@ -13,6 +13,11 @@ export class PlacesService {
   _productscesta: BehaviorSubject<Place[]>;
   constructor(private firestore: Firestore) { 
     this._productscesta = new BehaviorSubject<Place[]>([]);
+  }
+
+  addUser(PlaceUser: PlaceUser) {
+    const placeRef = collection(this.firestore, 'users');
+    return addDoc(placeRef, PlaceUser);
   }
 
   // tienda 
