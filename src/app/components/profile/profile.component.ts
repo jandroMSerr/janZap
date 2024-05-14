@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
     this.authService.logOut();
   }
   forgotpassword(){
-    const userEmail = (this.userEmail+"@gmail.com")
-    this.authService.forgotPassword(userEmail);
+    const userEmails = (this.userEmail+"@gmail.com")
+    this.authService.forgotPassword(userEmails);
   }
 }

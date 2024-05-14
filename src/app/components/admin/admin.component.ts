@@ -14,7 +14,7 @@ export class AdminComponent {
   formulario: FormGroup; formularioTop: FormGroup; formularioTopMujer: FormGroup; 
   images: string[];
 
-  places: Place[]; placesTop: PlaceTop[];placesTopMujer: PlaceTopMujer[];;
+  places: Place[]; placesTop: PlaceTop[];placesTopMujer: PlaceTopMujer[];
 
   constructor(
     private placesService: PlacesService, private storage: Storage

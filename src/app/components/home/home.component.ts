@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlacesService } from 'src/app/shared/services/admin.service';
-import { Place } from 'src/app/shared/interfaces/admin';
+import { Place,PlaceTop,PlaceTopMujer } from 'src/app/shared/interfaces/admin';
 
 
 @Component({
@@ -11,48 +11,30 @@ import { Place } from 'src/app/shared/interfaces/admin';
 
 export class homeComponent implements OnInit {
 
-  places: Place[];
+  places: Place[]; placesTop: PlaceTop[]; placesTopMujer: PlaceTopMujer[];
 
 
   constructor(
-  
+
     private placesService: PlacesService
   ) {
-
-    this.places = [{
-      id: '',
-      name: '',
-      description: '',
-      price: 0,
-      picture: '',
-      rating: 0,
-      comments: '',
-      color: '',
-      sizeshoes33: '',
-      sizeshoes34: '',
-      sizeshoes35: '',
-      sizeshoes36: '',
-      sizeshoes37: '',
-      sizeshoes38: '',
-      sizeshoes39: '',
-      sizeshoes40: '',
-      sizeshoes41: '',
-      sizeshoes42: '',
-      sizeshoes43: '',
-      sizeshoes44: '',
-      sizeshoes45: '',
-      sizeshoes46: '',
-      sizeshoes47: '',
-      
-      
-    }];
+    this.places = [];
+    this.placesTop = [];
+    this.placesTopMujer = [];
   }
 
   ngOnInit(): void {
     this.placesService.getPlaces().subscribe(places => {
       this.places = places;
     })
+    this.placesService.getProductTop().subscribe(placestop => {
+      this.placesTop = placestop;
+    })
+
+    this.placesService.getProductTopMujer().subscribe(placestopMujer => {
+      this.placesTopMujer = placestopMujer;
+    })
   }
 
-  
+
 }

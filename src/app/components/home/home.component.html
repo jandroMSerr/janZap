@@ -79,539 +79,244 @@
             <div class="tab-pane fade show active" id="hombre" role="tabpanel" aria-labelledby="pills-home-tab"
               tabindex="0">
               <div class="card-group">
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fhombre%2FseleccionTopHombre1.jpg?alt=media"
-                    class="card-img-top  h-50 img-fluid" alt="...">
+                <div class="card product-card mt-2" *ngFor="let products of placesTop"
+                  style="width: 18rem; margin-left: 15px; text-align: center;">
+                  <img class="card-img" src="{{products.pictureTop}}" style="width:auto; height: 200px;"
+                    alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>Jordan pantalón corto Diamond</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.0 (2)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">50,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">XS</button>
-                      <button type="button" class="btn btn-outline-dark">S</button>
-                      <button type="button" class="btn btn-outline-dark">M</button>
-                      <button type="button" class="btn btn-outline-dark">L</button>
-                      <button type="button" class="btn btn-outline-dark">XL</button>
-                      <button type="button" class="btn btn-outline-dark">XXL</button>
+                    <p class="product-name">{{products.nameTop}}
+                    <p>
+                    <p class="product-price">{{products.priceTop}}€</p>
 
+                    <div class="progress" role="progressbar" aria-label="Animated striped example">
+                      <div class="progress-bar progress-bar-striped  bg-warning progress-bar-animated"
+                        style="width: {{products.ratingTop}}%"></div>
+                    </div>
+                    <p class="py-2">
+                      <span class="list-inline-item text-dark">Puntuación :
+                        {{products.ratingTop}} <br>
+                        Comentarios : {{products.commentsTop}}</span>
                     </p>
-                  </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fhombre%2FseleccionTopHombre2.jpg?alt=media"
-                    class="card-img-top h-50 img-fluid" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>Nike Air Force 1 Low</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">120,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">37.0</button>
-                      <button type="button" class="btn btn-outline-dark">37.5</button>
-                      <button type="button" class="btn btn-outline-dark">38.0</button>
-                      <button type="button" class="btn btn-outline-dark">38.5</button>
-                      <button type="button" class="btn btn-outline-light">39.5</button>
-                      <button type="button" class="btn btn-outline-dark">40.0</button>
-                      <button type="button" class="btn btn-outline-dark">40.5</button>
-                      <button type="button" class="btn btn-outline-light">41.0</button>
-                      <button type="button" class="btn btn-outline-dark">41.5</button>
-                      <button type="button" class="btn btn-outline-dark">42.0</button>
-                      <button type="button" class="btn btn-outline-dark">43.0</button>
-                    </p>
-                  </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fhombre%2FseleccionTopHombre3.jpg?alt=media"
-                    class="card-img-top h-50 img-fluid" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>McKenzie Chándal con capucha Essential Full Zip</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">50,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">XS</button>
-                      <button type="button" class="btn btn-outline-dark">S</button>
-                      <button type="button" class="btn btn-outline-dark">M</button>
-                      <button type="button" class="btn btn-outline-dark">L</button>
-                      <button type="button" class="btn btn-outline-light">XL</button>
-                      <button type="button" class="btn btn-outline-dark">XXL</button>
-                      <button type="button" class="btn btn-outline-dark">XXXL</button>
+                    <p class="product-description">{{products.descriptionTop}}</p>
+                    <input *ngIf="products.sizeshoes33Top" type="checkbox" class="btn-check" id="size33"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes33Top" class="btn btn-secondary" for="size33">33</label>
 
-                    </p>
+                    <input *ngIf="products.sizeshoes34Top" type="checkbox" class="btn-check" id="size34"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes34Top" class="btn btn-secondary" for="size34">34</label>
+
+                    <input *ngIf="products.sizeshoes35Top" type="checkbox" class="btn-check" id="size35"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes35Top" class="btn btn-secondary" for="size35">35</label>
+
+                    <input *ngIf="products.sizeshoes36Top" type="checkbox" class="btn-check" id="size36"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes36Top" class="btn btn-secondary" for="size36">36</label>
+
+                    <input *ngIf="products.sizeshoes37Top" type="checkbox" class="btn-check" id="size37"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes37Top" class="btn btn-secondary" for="size37">37</label>
+
+                    <input *ngIf="products.sizeshoes38Top" type="checkbox" class="btn-check" id="size38"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes38Top" class="btn btn-secondary" for="size38">38</label>
+
+                    <input *ngIf="products.sizeshoes39Top" type="checkbox" class="btn-check" id="size39"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes39Top" class="btn btn-secondary" for="size39">39</label>
+
+                    <input *ngIf="products.sizeshoes40Top" type="checkbox" class="btn-check" id="size40"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes40Top" class="btn btn-secondary" for="size40">40</label>
+
+                    <input *ngIf="products.sizeshoes41Top" type="checkbox" class="btn-check" id="size41"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes41Top" class="btn btn-secondary" for="size41">41</label>
+
+                    <input *ngIf="products.sizeshoes42Top" type="checkbox" class="btn-check" id="size42"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes42Top" class="btn btn-secondary" for="size42">42</label>
+
+                    <input *ngIf="products.sizeshoes43Top" type="checkbox" class="btn-check" id="size43"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes43Top" class="btn btn-secondary" for="size43">43</label>
+
+                    <input *ngIf="products.sizeshoes44Top" type="checkbox" class="btn-check" id="size44"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes44Top" class="btn btn-secondary" for="size44">44</label>
+
+                    <input *ngIf="products.sizeshoes45Top" type="checkbox" class="btn-check" id="size45"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes45Top" class="btn btn-secondary" for="size45">45</label>
+
+                    <input *ngIf="products.sizeshoes46Top" type="checkbox" class="btn-check" id="size46"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes46Top" class="btn btn-secondary" for="size46">46</label>
+
                   </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fhombre%2FseleccionTopHombre4.jpg?alt=media"
-                    class="card-img-top h-50 img-fluid" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>Adidas Handball Spezial</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">110,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">37.0</button>
-                      <button type="button" class="btn btn-outline-dark">37.5</button>
-                      <button type="button" class="btn btn-outline-dark">38.0</button>
-                      <button type="button" class="btn btn-outline-dark">38.5</button>
-                      <button type="button" class="btn btn-outline-light ">39.5</button>
-                      <button type="button" class="btn btn-outline-dark">40.0</button>
-                      <button type="button" class="btn btn-outline-dark">40.5</button>
-                      <button type="button" class="btn btn-outline-light">41.0</button>
-                      <button type="button" class="btn btn-outline-dark">41.5</button>
-                      <button type="button" class="btn btn-outline-dark">42.0</button>
-                      <button type="button" class="btn btn-outline-dark">43.0</button>
-                    </p>
-                  </div>
-                  
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="mujer" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
               <div class="card-group">
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fmujer%2FseleccionTopMujer1.jpg?alt=media"
-                    class="card-img-top  h-50" alt="...">
+                <div class="card product-card mt-2" *ngFor="let products of placesTopMujer"
+                  style="width: 18rem; margin-left: 15px; text-align: center;">
+                  <img class="card-img" src="{{products.pictureTopMujer}}" style="width:auto; height: 200px;"
+                    alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>JUICY COUTURE Diamante Velour Track Pants</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (191)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">85,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">XS</button>
-                      <button type="button" class="btn btn-outline-dark">S</button>
-                      <button type="button" class="btn btn-outline-dark">M</button>
-                      <button type="button" class="btn btn-outline-dark">L</button>
-                      <button type="button" class="btn btn-outline-light">XL</button>
-                      <button type="button" class="btn btn-outline-light">XXL</button>
-                      <button type="button" class="btn btn-outline-light">XXXL</button>
-                    </p>
-                  </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fmujer%2FseleccionTopMujer2.jpg?alt=media"
-                    class="card-img-top h-50" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>Adidas Samba OG</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">195,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">37.0</button>
-                      <button type="button" class="btn btn-outline-dark">37.5</button>
-                      <button type="button" class="btn btn-outline-dark">38.0</button>
-                      <button type="button" class="btn btn-outline-dark">38.5</button>
-                      <button type="button" class="btn btn-outline-light">39.5</button>
-                      <button type="button" class="btn btn-outline-dark">40.0</button>
-                      <button type="button" class="btn btn-outline-dark">40.5</button>
-                      <button type="button" class="btn btn-outline-light">41.0</button>
-                      <button type="button" class="btn btn-outline-dark">41.5</button>
-                      <button type="button" class="btn btn-outline-dark">42.0</button>
-                      <button type="button" class="btn btn-outline-dark">43.0</button>
-                    </p>
-                  </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fmujer%2FseleccionTopMujer3.jpg?alt=media"
-                    class="card-img-top h-50" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>Adidas Crossover High Waist Leggings</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (1000)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">40,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">XS</button>
-                      <button type="button" class="btn btn-outline-dark">S</button>
-                      <button type="button" class="btn btn-outline-dark">M</button>
-                      <button type="button" class="btn btn-outline-dark">L</button>
-                      <button type="button" class="btn btn-outline-light">XL</button>
+                    <p class="product-name">{{products.nameTopMujer}}
+                    <p>
+                    <p class="product-price">{{products.priceTopMujer}}€</p>
 
+                    <div class="progress" role="progressbar" aria-label="Animated striped example">
+                      <div class="progress-bar progress-bar-striped  bg-warning progress-bar-animated"
+                        style="width: {{products.ratingTopMujer}}%"></div>
+                    </div>
+                    <p class="py-2">
+                      <span class="list-inline-item text-dark">Puntuación :
+                        {{products.ratingTopMujer}} <br>
+                        Comentarios : {{products.commentsTopMujer}}</span>
                     </p>
+                    <p class="product-description">{{products.descriptionTopMujer}}</p>
+                    <input *ngIf="products.sizeshoes33TopMujer" type="checkbox" class="btn-check" id="size33"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes33TopMujer" class="btn btn-secondary" for="size33">33</label>
+
+                    <input *ngIf="products.sizeshoes34TopMujer" type="checkbox" class="btn-check" id="size34"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes34TopMujer" class="btn btn-secondary" for="size34">34</label>
+
+                    <input *ngIf="products.sizeshoes35TopMujer" type="checkbox" class="btn-check" id="size35"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes35TopMujer" class="btn btn-secondary" for="size35">35</label>
+
+                    <input *ngIf="products.sizeshoes36TopMujer" type="checkbox" class="btn-check" id="size36"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes36TopMujer" class="btn btn-secondary" for="size36">36</label>
+
+                    <input *ngIf="products.sizeshoes37TopMujer" type="checkbox" class="btn-check" id="size37"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes37TopMujer" class="btn btn-secondary" for="size37">37</label>
+
+                    <input *ngIf="products.sizeshoes38TopMujer" type="checkbox" class="btn-check" id="size38"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes38TopMujer" class="btn btn-secondary" for="size38">38</label>
+
+                    <input *ngIf="products.sizeshoes39TopMujer" type="checkbox" class="btn-check" id="size39"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes39TopMujer" class="btn btn-secondary" for="size39">39</label>
+
+                    <input *ngIf="products.sizeshoes40TopMujer" type="checkbox" class="btn-check" id="size40"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes40TopMujer" class="btn btn-secondary" for="size40">40</label>
+
+                    <input *ngIf="products.sizeshoes41TopMujer" type="checkbox" class="btn-check" id="size41"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes41TopMujer" class="btn btn-secondary" for="size41">41</label>
+
+                    <input *ngIf="products.sizeshoes42TopMujer" type="checkbox" class="btn-check" id="size42"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes42TopMujer" class="btn btn-secondary" for="size42">42</label>
+
+                    <input *ngIf="products.sizeshoes43TopMujer" type="checkbox" class="btn-check" id="size43"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes43TopMujer" class="btn btn-secondary" for="size43">43</label>
+
+                    <input *ngIf="products.sizeshoes44TopMujer" type="checkbox" class="btn-check" id="size44"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes44TopMujer" class="btn btn-secondary" for="size44">44</label>
+
+                    <input *ngIf="products.sizeshoes45TopMujer" type="checkbox" class="btn-check" id="size45"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes45TopMujer" class="btn btn-secondary" for="size45">45</label>
+
+                    <input *ngIf="products.sizeshoes46TopMujer" type="checkbox" class="btn-check" id="size46"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes46TopMujer" class="btn btn-secondary" for="size46">46</label>
+
                   </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fmujer%2FseleccionTopMujer4.jpg?alt=media"
-                    class="card-img-top h-50" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>New Balance 9060</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">195,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">37.0</button>
-                      <button type="button" class="btn btn-outline-dark">37.5</button>
-                      <button type="button" class="btn btn-outline-dark">38.0</button>
-                      <button type="button" class="btn btn-outline-dark">38.5</button>
-                      <button type="button" class="btn btn-outline-light">39.5</button>
-                      <button type="button" class="btn btn-outline-dark">40.0</button>
-                      <button type="button" class="btn btn-outline-dark">40.5</button>
-                      <button type="button" class="btn btn-outline-light">41.0</button>
-                      <button type="button" class="btn btn-outline-dark">41.5</button>
-                      <button type="button" class="btn btn-outline-dark">42.0</button>
-                      <button type="button" class="btn btn-outline-dark">43.0</button>
-                    </p>
-                  </div>
-                  
                 </div>
               </div>
             </div>
             <div class="tab-pane fade" id="ninos" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
               <div class="card-group">
-                <div class="card ">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fninos%2FseleccionTopNin%CC%83os1.jpg?alt=media"
-                    class="card-img-top  h-50" alt="...">
+                <div class="card product-card mt-2" *ngFor="let products of placesTop"
+                  style="width: 18rem; margin-left: 15px; text-align: center;">
+                  <img class="card-img" src="{{products.pictureTop}}" style="width:auto; height: 200px;"
+                    alt="Card image cap">
                   <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>McKenzie Pantalón Corto</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">15,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
+                    <p class="product-name">{{products.nameTop}}
+                    <p>
+                    <p class="product-price">{{products.priceTop}}€</p>
+
+                    <div class="progress" role="progressbar" aria-label="Animated striped example">
+                      <div class="progress-bar progress-bar-striped  bg-warning progress-bar-animated"
+                        style="width: {{products.ratingTop}}%"></div>
+                    </div>
+                    <p class="py-2">
+                      <span class="list-inline-item text-dark">Puntuación :
+                        {{products.ratingTop}} <br>
+                        Comentarios : {{products.commentsTop}}</span>
                     </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">XS</button>
-                      <button type="button" class="btn btn-outline-dark">S</button>
-                      <button type="button" class="btn btn-outline-dark">M</button>
-                      <button type="button" class="btn btn-outline-dark">L</button>
-                      <button type="button" class="btn btn-outline-dark">XL</button>
-                      <button type="button" class="btn btn-outline-dark">XXL</button>
-                    </p>
+                    <p class="product-description">{{products.descriptionTop}}</p>
+                    <input *ngIf="products.sizeshoes33Top" type="checkbox" class="btn-check" id="size33"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes33Top" class="btn btn-secondary" for="size33">33</label>
+
+                    <input *ngIf="products.sizeshoes34Top" type="checkbox" class="btn-check" id="size34"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes34Top" class="btn btn-secondary" for="size34">34</label>
+
+                    <input *ngIf="products.sizeshoes35Top" type="checkbox" class="btn-check" id="size35"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes35Top" class="btn btn-secondary" for="size35">35</label>
+
+                    <input *ngIf="products.sizeshoes36Top" type="checkbox" class="btn-check" id="size36"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes36Top" class="btn btn-secondary" for="size36">36</label>
+
+                    <input *ngIf="products.sizeshoes37Top" type="checkbox" class="btn-check" id="size37"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes37Top" class="btn btn-secondary" for="size37">37</label>
+
+                    <input *ngIf="products.sizeshoes38Top" type="checkbox" class="btn-check" id="size38"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes38Top" class="btn btn-secondary" for="size38">38</label>
+
+                    <input *ngIf="products.sizeshoes39Top" type="checkbox" class="btn-check" id="size39"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes39Top" class="btn btn-secondary" for="size39">39</label>
+
+                    <input *ngIf="products.sizeshoes40Top" type="checkbox" class="btn-check" id="size40"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes40Top" class="btn btn-secondary" for="size40">40</label>
+
+                    <input *ngIf="products.sizeshoes41Top" type="checkbox" class="btn-check" id="size41"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes41Top" class="btn btn-secondary" for="size41">41</label>
+
+                    <input *ngIf="products.sizeshoes42Top" type="checkbox" class="btn-check" id="size42"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes42Top" class="btn btn-secondary" for="size42">42</label>
+
+                    <input *ngIf="products.sizeshoes43Top" type="checkbox" class="btn-check" id="size43"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes43Top" class="btn btn-secondary" for="size43">43</label>
+
+                    <input *ngIf="products.sizeshoes44Top" type="checkbox" class="btn-check" id="size44"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes44Top" class="btn btn-secondary" for="size44">44</label>
+
+                    <input *ngIf="products.sizeshoes45Top" type="checkbox" class="btn-check" id="size45"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes45Top" class="btn btn-secondary" for="size45">45</label>
+
+                    <input *ngIf="products.sizeshoes46Top" type="checkbox" class="btn-check" id="size46"
+                      autocomplete="off">
+                    <label *ngIf="products.sizeshoes46Top" class="btn btn-secondary" for="size46">46</label>
+
                   </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fninos%2FseleccionTopNin%CC%83os2.jpg?alt=media"
-                    class="card-img-top h-50" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>Nike Air Force 1 Low</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">195,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">32.0</button>
-                      <button type="button" class="btn btn-outline-dark">33.0</button>
-                      <button type="button" class="btn btn-outline-dark">33.5</button>
-                      <button type="button" class="btn btn-outline-dark">34.0</button>
-                      <button type="button" class="btn btn-outline-light">35.5</button>
-                      <button type="button" class="btn btn-outline-dark">36.0</button>
-                      <button type="button" class="btn btn-outline-dark">36.5</button>
-                      <button type="button" class="btn btn-outline-light">37.0</button>
-                      <button type="button" class="btn btn-outline-dark">37.5</button>
-                      <button type="button" class="btn btn-outline-dark">38.0</button>
-                      <button type="button" class="btn btn-outline-dark">38.5</button>
-                    </p>
-                  </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fninos%2FseleccionTopNin%CC%83os3.jpg?alt=media"
-                    class="card-img-top h-50" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>Jordan Diamond Mesh pantalón</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">40,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">XS</button>
-                      <button type="button" class="btn btn-outline-dark">S</button>
-                      <button type="button" class="btn btn-outline-dark">M</button>
-                      <button type="button" class="btn btn-outline-dark">L</button>
-                      <button type="button" class="btn btn-outline-dark">XL</button>
-                      <button type="button" class="btn btn-outline-dark">XXL</button>
-                    </p>
-                  </div>
-                  
-                </div>
-                <div class="card">
-                  <img
-                    src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2FseleccionTop%2Fninos%2FseleccionTopNin%CC%83os4.jpg?alt=media"
-                    class="card-img-top h-50" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title font-weight-bold"><a>New Balance 530</a></h5>
-                    <ul class="list-unstyled list-inline mb-0">
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item me-0">
-                        <i class="bi bi-star-fill" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <i class="bi bi-star-half" style="color: yellow;"></i>
-                      </li>
-                      <li class="list-inline-item">
-                        <p class="text-muted">4.5 (413)</p>
-                      </li>
-                    </ul>
-                    <p class="mb-2">195,00€</p>
-                    <p class="card-text">
-                      Escoge una talla disponible
-                    </p>
-                    <p class="card-text">
-                      <button type="button" class="btn btn-outline-dark">32.0</button>
-                      <button type="button" class="btn btn-outline-dark">33.0</button>
-                      <button type="button" class="btn btn-outline-dark">33.5</button>
-                      <button type="button" class="btn btn-outline-dark">34.0</button>
-                      <button type="button" class="btn btn-outline-light">35.5</button>
-                      <button type="button" class="btn btn-outline-dark">36.0</button>
-                      <button type="button" class="btn btn-outline-dark">36.5</button>
-                      <button type="button" class="btn btn-outline-light">37.0</button>
-                      <button type="button" class="btn btn-outline-dark">37.5</button>
-                      <button type="button" class="btn btn-outline-dark">38.0</button>
-                      <button type="button" class="btn btn-outline-dark">38.5</button>
-                    </p>
-                  </div>
-                  
                 </div>
               </div>
             </div>
@@ -619,7 +324,7 @@
           </div>
         </div>
       </div>
-   
+
       <div id="carousel2" class="carousel slide mt-5" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -634,7 +339,7 @@
           </div>
           <div class="carousel-item">
             <img
-              src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada3.png?alt=media"
+              src="https://firebasestorage.googleapis.com/v0/b/janzap-34d2b.appspot.com/o/images%2FHome%2Fcarousel2%2Fportada3.jpg?alt=media"
               class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
