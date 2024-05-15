@@ -15,13 +15,14 @@ describe('Contact Page', () => {
       this.data.name
     );
     cy.get('.row > .col-md-6 > .ng-invalid > .mb-3 > #email').type(
-      this.data.email
+      this.data.emailUser
     );
     cy.get('.row > .col-md-6 > .ng-invalid > .mb-3 > #mensaje').type(
       this.data.testText
     );
     cy.contains('Enviar').click();
   });
+
   it('Wrong inputs in formulary', function () {
     cy.get('.row > .col-md-6 > .ng-untouched > .mb-3 > #nombre').type('1');
     //Seleccionar un indicador y sacar un texto
@@ -31,7 +32,7 @@ describe('Contact Page', () => {
         expect(textoName).to.equal(this.data.nameError);
       });
     cy.get('.row > .col-md-6 > .ng-invalid > .mb-3 > #email').type(
-      this.data.email
+      this.data.emailUser
     );
     //Borrar texto de un campo
     cy.get('.row > .col-md-6 > .ng-invalid > .mb-3 > #email').clear();

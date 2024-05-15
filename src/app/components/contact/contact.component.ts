@@ -27,7 +27,7 @@ export class ContactComponent implements OnInit {
         console.log('Formulario enviado:', this.contactForm.value);
         this.isLoading = false;
         this.contactForm.reset();
-      }, 5000);
+      }, 4000);
     } else {
       this.markFormGroupTouched(this.contactForm);
     }

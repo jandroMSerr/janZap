@@ -1,7 +1,9 @@
 {
-  "name": "Alejandro Martínez",
-  "email": "jandrosmartinez@gmail.com",
-  "password": "hola1234",
+  "nameUser": "Alejandro Martínez",
+  "emailUser": "user@gmail.com",
+  "passwordUser": "123456789",
+  "emailAdmin": "admin@gmail.com",
+  "passwordAdmin": "123456789",
   "testText": "hola hola, este es un texto de prueba para cypress",
   "nameError" :"El nombre debe tener al menos 2 caracteres.",
   "emailNeeded" : "El email es obligatorio.",

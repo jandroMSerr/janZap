@@ -8,10 +8,10 @@ describe('Login', () => {
     });
 
   });
-  it('Should login correctly',function () {
+  it('Should login correctly with admin',function () {
 
-    cy.get('#email').type(this.data.email);
-    cy.get('#password').type(this.data.password);
+    cy.get('#email').type(this.data.emaiAdmin);
+    cy.get('#password').type(this.data.passwordAdmin);
     cy.contains('Entrar').click();
     cy.wait(3000);
 
@@ -19,6 +19,22 @@ describe('Login', () => {
     cy.url().then((url: string) => {
       expect(url).to.equal(this.data.homeURL);
     });
+    cy.contains("Panel de control");
     
   });
+
+  it('Should login correctly with no admin user',function () {
+
+    cy.get('#email').type(this.data.emailUser);
+    cy.get('#password').type(this.data.passwordUser);
+    cy.contains('Entrar').click();
+    cy.wait(3000);
+
+    //Capturar la url de una web
+    cy.url().then((url: string) => {
+      expect(url).to.equal(this.data.homeURL);
+    });
+
+  });
+
 });
